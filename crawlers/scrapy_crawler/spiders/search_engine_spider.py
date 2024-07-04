@@ -15,7 +15,7 @@ class SearchEngineSpider(scrapy.Spider):
     
     def __init__(self, *args, **kwargs):
         super().__init__()
-        self.search_queries = scraping_prep.csv_to_array_of_strings_sample("../../data/website_no_website_schools/search_engine_prep.csv", 3)
+        self.search_queries = scraping_prep.csv_to_array_of_strings_sample("../../data/website_no_website_schools/search_engine_prep.csv", 30)
     
     def start_requests(self):
         for query in self.search_queries:
@@ -25,15 +25,15 @@ class SearchEngineSpider(scrapy.Spider):
                                  dont_filter=True)
 
     def parse(self, response):
-        directory = './crawl_results'
-        filename = os.path.join(directory, 'response.html')
+        # directory = './crawl_results'
+        # filename = os.path.join(directory, 'response.html')
         
-        if not os.path.exists(directory):
-            os.makedirs(directory)
+        # if not os.path.exists(directory):
+        #     os.makedirs(directory)
         
-        with open(filename, 'wb') as f:
-            f.write(response.body)
-            
+        # with open(filename, 'wb') as f:
+        #     f.write(response.body)
+        
         elements = response.css('div.result')[:3]
             
         for element in elements:

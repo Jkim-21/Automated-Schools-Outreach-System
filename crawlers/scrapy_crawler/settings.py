@@ -2,7 +2,11 @@
 from dotenv import load_dotenv
 import os
 
+import logging
+
 load_dotenv()
+
+logging.getLogger('faker').setLevel(logging.ERROR)
 
 BOT_NAME = "scrapy_crawler"
 
@@ -15,39 +19,51 @@ DOWNLOADER_MIDDLEWARES = {
     'scrapy_splash.SplashCookiesMiddleware': 723, # Manages cookies for Splash requests
     'scrapy_splash.SplashMiddleware': 725, # Handles the actual request and response processing for Splash
     'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware': 810, # Ensure the HTTP responses are properly decompressed
-    'scrapy_zyte_smartproxy.ZyteSmartProxyMiddleware': 610,
     
+    'scrapy_crawler.middlewares.RotatingUserAgentMiddleware': 400, # Custom midleware rotating user agents per request
     'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware': None, # Turns off built in user agent middleware
-    'scrapy.downloadermiddlewares.retry.RetryMiddleware': None,
-    'scrapy_fake_useragent.middleware.RandomUserAgentMiddleware': 400,
-    'scrapy_fake_useragent.middleware.RetryUserAgentMiddleware': 401,
+    
+    'scrapy_crawler.middlewares.RequestTimingMiddleware': 543,
 }
 
-SPIDER_MIDDLEWARES = {
-    'scrapy_splash.SplashDeduplicateArgsMiddleware': 100, # Supports the `cache_args` feature saving disk space by not storing duplicate Splash arguments multiple times in a disk request queue
+
+ZYTE_API_KEY = os.getenv('ZYTE_API_KEY')
+ADDONS = {
+    "scrapy_zyte_api.Addon": 500,
 }
 
-FAKEUSERAGENT_PROVIDERS = [
-    'scrapy_fake_useragent.providers.FakeUserAgentProvider',  # this is the first provider we'll try
-    'scrapy_fake_useragent.providers.FakerProvider',  # if FakeUserAgentProvider fails, we'll use faker to generate a user-agent string for us
-    'scrapy_fake_useragent.providers.FixedUserAgentProvider',  # fall back to USER_AGENT value
-]
 
-USER_AGENT = 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36'
+AUTOTHROTTLE_ENABLED = True
+AUTOTHROTTLE_START_DELAY = 0.5
+AUTOTHROTTLE_MAX_DELAY = 10
 
-RANDOM_UA_PER_PROXY = True
+DOWNLOAD_DELAY = 0.5
+RANDOMIZE_DOWNLOAD_DELAY = True
 
-ZYTE_SMARTPROXY_ENABLED = True
-ZYTE_SMARTPROXY_URL = "http://api.zyte.com:8011"
-ZYTE_SMARTPROXY_APIKEY = os.getenv('ZYTE_API_KEY')
+CONCURRENT_REQUESTS = 16
+AUTOTHROTTLE_TARGET_CONCURRENCY = 3
 
-DUPEFILTER_CLASS = 'scrapy_splash.SplashAwareDupeFilter'
-HTTPCACHE_STORAGE = 'scrapy_splash.SplashAwareFSCacheStorage' # Custom cache storage backend
+EXTENSIONS = {
+    'scrapy.extensions.logstats.LogStats': 500,
+    'scrapy.extensions.corestats.CoreStats': 500,
+}
+
 
 LOG_FILE = './crawl_results/scrapy_log.txt'
+
+LOG_LEVEL = 'INFO'
 
 ROBOTSTXT_OBEY = False
 
 REQUEST_FINGERPRINTER_IMPLEMENTATION = "2.7"
 TWISTED_REACTOR = "twisted.internet.asyncioreactor.AsyncioSelectorReactor"
 FEED_EXPORT_ENCODING = "utf-8"
+
+
+SPIDER_MIDDLEWARES = {
+    'scrapy_splash.SplashDeduplicateArgsMiddleware': 100, # Supports the `cache_args` feature saving disk space by not storing duplicate Splash arguments multiple times in a disk request queue
+}
+
+DUPEFILTER_CLASS = 'scrapy_splash.SplashAwareDupeFilter'
+HTTPCACHE_STORAGE = 'scrapy_splash.SplashAwareFSCacheStorage' # Custom cache storage backend
+

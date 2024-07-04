@@ -8,6 +8,8 @@ from scrapy import signals
 # useful for handling different item types with a single interface
 from itemadapter import is_item, ItemAdapter
 
+from fake_useragent import UserAgent
+import random
 
 class ScrapyCrawlerSpiderMiddleware:
     # Not all methods need to be defined. If a method is not defined,
@@ -101,3 +103,24 @@ class ScrapyCrawlerDownloaderMiddleware:
 
     def spider_opened(self, spider):
         spider.logger.info("Spider opened: %s" % spider.name)
+    
+class RotatingUserAgentMiddleware:
+    def __init__(self):
+        super().__init__()
+        self.ua = UserAgent(platforms='pc')
+    
+    def process_request(self, request, spider):
+        request.headers['User-Agent'] = self.ua.random
+
+import time
+
+class RequestTimingMiddleware:
+    def process_request(self, request, spider):
+        request.meta['start_time'] = time.time()
+
+    def process_response(self, request, response, spider):
+        start_time = request.meta.get('start_time')
+        if start_time:
+            elapsed_time = time.time() - start_time
+            spider.logger.info(f"Request to {request.url} took {elapsed_time:.2f} seconds")
+        return response

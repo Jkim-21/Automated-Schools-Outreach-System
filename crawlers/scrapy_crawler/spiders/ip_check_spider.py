@@ -1,9 +1,4 @@
 import scrapy
-from scrapy_splash import SplashRequest
-import json
-import os
-import sys
-import importlib
 
 class SearchEngineSpider(scrapy.Spider):
     name = "ip_check_spider"
@@ -20,3 +15,4 @@ class SearchEngineSpider(scrapy.Spider):
     def parse(self, response):
        ip_address = response.json().get('origin')
        self.logger.info(f"IP Address: {ip_address}")
+       self.log(f'User-Agent:{response.request.headers.get("User-Agent")}')

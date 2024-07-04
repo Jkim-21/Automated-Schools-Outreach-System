@@ -1,0 +1,6 @@
+CREATE TABLE search_engine_results (
+    INDEX_NUMBER INT,
+    STATENAME VARCHAR(255),
+    SCH_NAME VARCHAR(255),
+    WEBSITE VARCHAR(255)
+);
