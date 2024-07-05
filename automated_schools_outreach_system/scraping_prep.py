@@ -1,15 +1,21 @@
 import pandas as pd
 import random
 
+    
 def csv_to_array_of_strings(csv_file_path):
     school_array = []
     df = pd.read_csv(csv_file_path)
     try:
         for index, row in df.iterrows():
-            concatenated_row = f"{str(row.iloc[0])} website "
-            rest_of_row = ' '.join([str(item) for item in row.iloc[1:]])
+            id_school_pair = []
+            
+            id_school_pair.append(str(row.iloc[0]))
+            concatenated_row = f"{str(row.iloc[1])} website "
+            rest_of_row = ' '.join([str(item) for item in row.iloc[2:]])
             concatenated_row += rest_of_row
-            school_array.append(concatenated_row)
+            id_school_pair.append(concatenated_row)
+            
+            school_array.append(id_school_pair)
         return school_array
     
     except Exception as e:

@@ -2,3 +2,6 @@ scrapy_log.txt
 temp.html
 response.html
 crawl_results/
+.vscode
+.ipynb_checkpoints
+C4C_ASOS.egg-info
