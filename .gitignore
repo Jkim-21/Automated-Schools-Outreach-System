@@ -1,5 +1,8 @@
+scrapy_log.txt
 temp.html
-output.json
+response.html
+crawl_results/
+.vscode
+.ipynb_checkpoints
+C4C_ASOS.egg-info
 __pycache__/
-.ipynb_checkpoints/
-C4C_ASOS.egg-info/
