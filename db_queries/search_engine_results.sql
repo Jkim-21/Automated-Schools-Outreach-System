@@ -15,4 +15,4 @@ DROP TABLE IF EXISTS search_engine_test;
 CREATE TABLE search_engine_test LIKE search_engine_results;
 INSERT INTO search_engine_test SELECT * from search_engine_results;
 
-COMMIT; 
+COMMIT;
