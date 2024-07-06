@@ -1,6 +1,7 @@
 import scrapy
 from scrapy_splash import SplashRequest
 from automated_schools_outreach_system import scraping_prep, db_manager, config
+import os
 
 class SearchEngineSpider(scrapy.Spider):
     name = "search_engine_spider"
@@ -8,10 +9,15 @@ class SearchEngineSpider(scrapy.Spider):
     
     def __init__(self, *args, **kwargs):
         super().__init__()
-        self.search_queries = scraping_prep.csv_to_array_of_strings_sample("../../data/website_no_website_schools/search_engine_prep.csv", 5)
-    
+        self.db_connection = ''
+        self.dataset_target = 'setWebsiteTestLinks'
+        
     def start_requests(self):
-        for id_query_pair in self.search_queries:
+        self.db_connection = db_manager.get_db_connection(config.DATABASE_CONFIG)
+        search_queries = scraping_prep.array_of_schools(self.db_connection, 'ALABAMA')
+        self.db_connection.close()
+
+        for id_query_pair in search_queries:
             id, query = id_query_pair
             url = f'https://www.startpage.com/do/search?cmd=process_search&query={query}'
             yield scrapy.Request(url,
@@ -28,13 +34,9 @@ class SearchEngineSpider(scrapy.Spider):
         
         # with open(filename, 'wb') as f:
         #     f.write(response.body)
+            
         elements = response.css('div.result')[:3]
         id = response.meta.get('id')
-        db_connection = db_manager.get_db_connection(config.DATABASE_CONFIG)
-        
-        if db_connection is None:
-            self.logger.error("Failed to connect to database.")
-            return
         
         links = []
             
@@ -48,11 +50,13 @@ class SearchEngineSpider(scrapy.Spider):
                 'id': id,
                 'link': link
             }
+        
         try:
-            db_manager.update_links_in_db(db_connection, id, links)
+            if len(links) > 0:
+                db_manager.update_links_in_db(id, links, self.dataset_target)
         except Exception as err:
             self.logger.error(f"Error updating database: {err}")
         finally:
-            db_connection.close()
+            self.db_connection.close()
 
             
