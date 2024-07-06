@@ -114,13 +114,13 @@ class RotatingUserAgentMiddleware:
 
 import time
 
-# class RequestTimingMiddleware:
-#     def process_request(self, request, spider):
-#         request.meta['start_time'] = time.time()
+class RequestTimingMiddleware:
+    def process_request(self, request, spider):
+        request.meta['start_time'] = time.time()
 
-#     def process_response(self, request, response, spider):
-#         start_time = request.meta.get('start_time')
-#         if start_time:
-#             elapsed_time = time.time() - start_time
-#             spider.logger.info(f"Request to {request.url} took {elapsed_time:.2f} seconds")
-#         return response
+    def process_response(self, request, response, spider):
+        start_time = request.meta.get('start_time')
+        if start_time:
+            elapsed_time = time.time() - start_time
+            spider.logger.info(f"Request to {request.url} took {elapsed_time:.2f} seconds")
+        return response

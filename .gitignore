@@ -5,3 +5,4 @@ crawl_results/
 .vscode
 .ipynb_checkpoints
 C4C_ASOS.egg-info
+__pycache__/

@@ -23,7 +23,7 @@ DOWNLOADER_MIDDLEWARES = {
     'scrapy_crawler.middlewares.RotatingUserAgentMiddleware': 400, # Custom midleware rotating user agents per request
     'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware': None, # Turns off built in user agent middleware
     
-    'scrapy_crawler.middlewares.RequestTimingMiddleware': 543,
+    # 'scrapy_crawler.middlewares.RequestTimingMiddleware': 543,
 }
 
 
@@ -34,8 +34,8 @@ ADDONS = {
 
 
 AUTOTHROTTLE_ENABLED = True
-AUTOTHROTTLE_START_DELAY = 0.5
-AUTOTHROTTLE_MAX_DELAY = 10
+AUTOTHROTTLE_START_DELAY = 1.0
+AUTOTHROTTLE_MAX_DELAY = 10.0
 
 DOWNLOAD_DELAY = 0.5
 RANDOMIZE_DOWNLOAD_DELAY = True

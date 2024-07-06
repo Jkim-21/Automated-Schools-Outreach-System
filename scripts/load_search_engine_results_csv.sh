@@ -1,6 +1,6 @@
 #!/bin/bash
 
-read -r -p "Enter the base path to your data: " DIR_PATH
+read -r -p "Enter the directory path to your data: " DIR_PATH
 read -r -p "Enter the database name: " DATABASE_NAME
 read -r -p "Enter your MySQL username: " SQL_USERNAME
 
