@@ -52,7 +52,7 @@ EXTENSIONS = {
 
 LOG_FILE = './crawl_results/scrapy_log.txt'
 # LOG_LEVEL = 'INFO'
-LOG_ENABLED = False
+# LOG_ENABLED = False
 
 ROBOTSTXT_OBEY = False
 
