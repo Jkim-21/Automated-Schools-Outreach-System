@@ -1,4 +1,7 @@
-# Scrapy settings for new_spider project
+# Scrapy settings for scrapy_scraper project
+
+
+
 #
 # For simplicity, this file contains only settings considered important or
 # commonly used. You can find more settings consulting the documentation:
@@ -7,14 +10,14 @@
 #     https://docs.scrapy.org/en/latest/topics/downloader-middleware.html
 #     https://docs.scrapy.org/en/latest/topics/spider-middleware.html
 
-BOT_NAME = "new_spider"
+BOT_NAME = "scrapy_scraper"
 
-SPIDER_MODULES = ["new_spider.spiders"]
-NEWSPIDER_MODULE = "new_spider.spiders"
+SPIDER_MODULES = ["scrapy_scraper.spiders"]
+NEWSPIDER_MODULE = "scrapy_scraper.spiders"
 
 
 # Crawl responsibly by identifying yourself (and your website) on the user-agent
-#USER_AGENT = "new_spider (+http://www.yourdomain.com)"
+#USER_AGENT = "scrapy_scraper (+http://www.yourdomain.com)"
 
 # Obey robots.txt rules
 ROBOTSTXT_OBEY = True
@@ -45,13 +48,13 @@ CONCURRENT_REQUESTS_PER_IP = 100
 # Enable or disable spider middlewares
 # See https://docs.scrapy.org/en/latest/topics/spider-middleware.html
 #SPIDER_MIDDLEWARES = {
-#    "new_spider.middlewares.NewSpiderSpiderMiddleware": 543,
+#    "scrapy_scraper.middlewares.NewSpiderSpiderMiddleware": 543,
 #}
 
 # Enable or disable downloader middlewares
 # See https://docs.scrapy.org/en/latest/topics/downloader-middleware.html
 #DOWNLOADER_MIDDLEWARES = {
-#    "new_spider.middlewares.NewSpiderDownloaderMiddleware": 543,
+#    "scrapy_scraper.middlewares.NewSpiderDownloaderMiddleware": 543,
 #}
 
 # Enable or disable extensions
@@ -63,7 +66,7 @@ CONCURRENT_REQUESTS_PER_IP = 100
 # Configure item pipelines
 # See https://docs.scrapy.org/en/latest/topics/item-pipeline.html
 #ITEM_PIPELINES = {
-#    "new_spider.pipelines.NewSpiderPipeline": 300,
+#    "scrapy_scraper.pipelines.NewSpiderPipeline": 300,
 #}
 
 # Enable and configure the AutoThrottle extension (disabled by default)
@@ -95,3 +98,5 @@ FEED_EXPORT_ENCODING = "utf-8"
 # Enable JSON export
 FEED_FORMAT = 'json'
 FEED_URI = 'output.json'
+
+

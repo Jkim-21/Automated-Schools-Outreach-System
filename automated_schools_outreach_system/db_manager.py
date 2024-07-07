@@ -1,3 +1,5 @@
+#db_manager.py
+
 import mysql.connector
 import logging
 from automated_schools_outreach_system import config

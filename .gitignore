@@ -8,3 +8,5 @@ C4C_ASOS.egg-info
 __pycache__/
 SHAPEfiles_SCH
 .env
+output.json
+links.txt
