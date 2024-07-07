@@ -6,7 +6,10 @@ from automated_schools_outreach_system import config
 import mysql.connector
 import json
 
-def store_emails(DB, url, emails):
+def store_emails(url, emails):
+
+    cursor = None
+    connection = None
 
     try:
         
@@ -14,7 +17,7 @@ def store_emails(DB, url, emails):
         unique_emails = list(set(emails))
 
         #establish connection and create cursor
-        connection = mysql.connector.connect(DB)
+        connection = mysql.connector.connect(**config.DATABASE_CONFIG)
         cursor = connection.cursor()
 
         #If there already are emails in the DB then pull them
@@ -57,12 +60,13 @@ def store_emails(DB, url, emails):
     except mysql.connector.Error as error:
         print(f"Error: {error}")
 
+        return []
+
 
     finally:
         
         #housekeeping pt 2
-        try:
+        if cursor:
             cursor.close()
+        if connection:
             connection.close()
-        except mysql.connection.Error as error:
-            print(f"Error: {error}")

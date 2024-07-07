@@ -1,11 +1,9 @@
 import scrapy
 import re
 from urllib.parse import urlparse
-import mysql.connector
-import json
 from automated_schools_outreach_system import config, check_scraped, store_emails
 
-class EmailScraper(scrapy.Spider):
+class email_scraper(scrapy.Spider):
     name = 'email_scraper'
     
     # CALL:
@@ -16,6 +14,7 @@ class EmailScraper(scrapy.Spider):
 
         super().__init__(*args, **kwargs)
 
+
         self.start_urls = self.read_urls()
         self.visited_urls = set()
         self.max_depth = int(max_depth)
@@ -24,17 +23,12 @@ class EmailScraper(scrapy.Spider):
         self.keywords = ['admin@','music@','band@','choir@','deansoffice@','dean@',]
         self.blacklist_keywords = ['news','archive','transport','sports','publication']
         self.completed_domains = set()
-
-        self.db_connection = mysql.connector.connect(
-                **config.DATABASE_CONFIG
-            )
         
 
     #check_scraped can be found in ASOS folder
+
     def read_urls(self):
-        return(
-            check_scraped.get_unparsed(self.db_connection)
-        )
+        return check_scraped.get_unparsed()
 
 
     def start_requests(self):
@@ -68,7 +62,7 @@ class EmailScraper(scrapy.Spider):
         if emails:
             
             #needs to be the original url or will fail
-            emails = store_emails.store_emails(self.db_connection, response.meta['base_url'], emails)
+            emails = store_emails.store_emails(response.meta['base_url'], emails)
 
         for email in set(emails):
 
