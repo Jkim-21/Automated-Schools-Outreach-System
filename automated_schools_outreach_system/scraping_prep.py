@@ -1,9 +1,10 @@
 import pandas as pd
 import random
 
-def array_of_schools(db_connection, state_name):
-    state_query = "SELECT * FROM search_engine_prep WHERE STATENAME = %s"
-    state_df = pd.read_sql(state_query, db_connection, params=(state_name,))
+def array_of_schools(db_connection, state_names):
+    placeholders = ', '.join(['%s'] * len(state_names))
+    state_query = f"SELECT * FROM search_engine_results WHERE STATENAME IN ({placeholders})"
+    state_df = pd.read_sql(state_query, db_connection, params=tuple(state_names))
     
     school_array = []
     try:
@@ -12,7 +13,7 @@ def array_of_schools(db_connection, state_name):
             id_school_pair.append(str(row.iloc[0]))
             
             initial_string = f"{str(row.iloc[1])} website"
-            rest_of_string = " ".join([str(item) for item in row.iloc[2:]])
+            rest_of_string = " ".join([str(item) for item in row.iloc[2:5]])
             concatenated_row = f"{initial_string} {rest_of_string}"
             
             id_school_pair.append(concatenated_row)
@@ -23,9 +24,10 @@ def array_of_schools(db_connection, state_name):
         print(f"Error reading dataframe: {e}")
         return []
     
-def array_of_remaining_schools(db_connection, state_name):
-    state_query = "SELECT * FROM search_engine_test WHERE STATENAME = %s AND SCRAPED_WEBSITE_1 IS NULL"
-    state_df = pd.read_sql(state_query, db_connection, params=(state_name,))
+def array_of_remaining_schools(db_connection, state_names):
+    placeholders = ', '.join(['%s'] * len(state_names))
+    state_query = f"SELECT * FROM search_engine_results WHERE STATENAME IN ({placeholders}) AND SCRAPED_WEBSITE_1 IS NULL"
+    state_df = pd.read_sql(state_query, db_connection, params=tuple(state_names))
     
     school_array = []
     try:
@@ -34,7 +36,7 @@ def array_of_remaining_schools(db_connection, state_name):
             id_school_pair.append(str(row[0]))
             
             initial_string = f"{str(row[1])} website"
-            rest_of_string = " ".join([str(item) for item in row[2:]])
+            rest_of_string = " ".join([str(item) for item in row[2:5]])
             concatenated_row = f"{initial_string} {rest_of_string}"
             
             id_school_pair.append(concatenated_row)

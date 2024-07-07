@@ -10,11 +10,12 @@ class SearchEngineSpider(scrapy.Spider):
     def __init__(self, *args, **kwargs):
         super().__init__()
         self.db_connection = ''
-        self.dataset_target = 'setWebsiteTestLinks'
+        self.dataset_target = 'setWebsiteLinks'
+        self.state_names = ['ALABAMA', 'ALASKA', 'ARIZONA', 'ARKANSAS', 'CALIFORNIA']
         
     def start_requests(self):
         self.db_connection = db_manager.get_db_connection(config.DATABASE_CONFIG)
-        search_queries = scraping_prep.array_of_remaining_schools(self.db_connection, 'ALABAMA')
+        search_queries = scraping_prep.array_of_remaining_schools(self.db_connection, self.state_names)
         self.db_connection.close()
 
         for id_query_pair in search_queries:
