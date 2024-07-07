@@ -24,9 +24,10 @@ DOWNLOADER_MIDDLEWARES = {
     'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware': None, # Turns off built in user agent middleware
     
     # 'scrapy_crawler.middlewares.RequestTimingMiddleware': 543,
+    'scrapy_zyte_api.ScrapyZyteAPIDownloaderMiddleware': 543,
 }
 
-
+ZYTE_API_ENABLED = True
 ZYTE_API_KEY = os.getenv('ZYTE_API_KEY')
 ADDONS = {
     "scrapy_zyte_api.Addon": 500,
@@ -51,6 +52,7 @@ EXTENSIONS = {
 
 LOG_FILE = './crawl_results/scrapy_log.txt'
 # LOG_LEVEL = 'INFO'
+LOG_ENABLED = False
 
 ROBOTSTXT_OBEY = False
 
