@@ -10,4 +10,5 @@ SHAPEfiles_SCH
 .env
 output.json
 links.txt
+results.txt
 db_testing.sql

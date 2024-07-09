@@ -2,33 +2,43 @@
 #this file not only needs to store emails but it also needs to eliminate the duplicate emails
 #it will write JSONs of emails to the C4C_ASOS DB table with_emails
 
-from automated_schools_outreach_system import config
+from automated_schools_outreach_system import config, debug
 import mysql.connector
 import json
 
 def store_emails(url, emails):
 
+
+
     cursor = None
     connection = None
 
     try:
-        
+
         #the emails should already be a set but this is a failsafe incase the code is changed 
-        unique_emails = list(set(emails))
+        unique_emails = set(emails)
 
         #establish connection and create cursor
         connection = mysql.connector.connect(**config.DATABASE_CONFIG)
         cursor = connection.cursor()
 
+       
+
         #If there already are emails in the DB then pull them
             #there will be emails from other threads in the entry basically every time
-        cursor.execute("SELECT * FROM with_emails WHERE WEBSITE = %s",
-                       (url))
-        result = cursor.fetchone()
 
+        cursor.execute("SELECT * FROM with_emails WHERE WEBSITE = %s",(url,))
+        
+        
+
+        result = cursor.fetchone()
+        #it is okay for this ^^^ to return nothing
+
+        
 
         if result:
             
+            debug.debug("try-if")
 
             #if there are already emails in the 
             if result[4]:
@@ -42,22 +52,35 @@ def store_emails(url, emails):
             cursor.execute(query, (json.dumps(unique_emails), url))
 
         else:
+            
+            debug.debug("try-else.1")
 
-            #this is a little dense but works
-            #if table "with_emails" doesnt have an entry for the current school / link then copy the corresponding index from "search_engine_results"
-            #puts JSON of emails in the fifth column for emails
-            #
+            # Insert new record with emails field set to an empty JSON array
+            query = ("INSERT INTO with_emails (INDEX_NUMBER, STATENAME, SCH_NAME, WEBSITE, emails) "
+                     "SELECT INDEX_NUMBER, STATENAME, SCH_NAME, WEBSITE, %s FROM search_engine_results "
+                     "WHERE WEBSITE = %s")
 
-            query = ("INSERT INTO with_emails (INDEX_NUMBER,STATENAME, SCH_NAME, WEBSITE, emails)"
-                     "SELECT INDEX_NUMBER, STATENAME, SCH_NAME, WEBSITE, %s FROM search_engine_results WHERE WEBSITE = %s")
+            debug.debug("try-else.2")
 
-            cursor.execute(query, (json.dumps(unique_emails), url))
+            cursor.execute(query, (json.dumps([]), url))
 
+            # Update the new record with emails
+            query = "UPDATE with_emails SET emails = %s WHERE WEBSITE = %s"
+            cursor.execute(query, (json.dumps(list(unique_emails)), url))
+
+            
+            debug.debug("try-else.3")
+        
         #housekeeping pt 1
+        debug.debug("try-end")
+
         connection.commit()
         
 
     except mysql.connector.Error as error:
+
+        debug.debug("except")
+
         print(f"Error: {error}")
 
         return []
