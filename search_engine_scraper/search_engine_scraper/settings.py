@@ -1,4 +1,4 @@
-# Scrapy settings for scrapy_crawler project
+# Scrapy settings for search_engine_spider project
 from dotenv import load_dotenv
 import os
 
@@ -8,10 +8,10 @@ load_dotenv()
 
 logging.getLogger('faker').setLevel(logging.ERROR)
 
-BOT_NAME = "scrapy_crawler"
+BOT_NAME = "search_engine_scraper"
 
-SPIDER_MODULES = ["scrapy_crawler.spiders"]
-NEWSPIDER_MODULE = "scrapy_crawler.spiders"
+SPIDER_MODULES = ["search_engine_scraper.spiders"]
+NEWSPIDER_MODULE = "search_engine_scraper.spiders"
 
 SPLASH_URL = 'http://localhost:8050'
 
@@ -20,10 +20,10 @@ DOWNLOADER_MIDDLEWARES = {
     'scrapy_splash.SplashMiddleware': 725, # Handles the actual request and response processing for Splash
     'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware': 810, # Ensure the HTTP responses are properly decompressed
     
-    'scrapy_crawler.middlewares.RotatingUserAgentMiddleware': 400, # Custom midleware rotating user agents per request
+    'search_engine_scraper.middlewares.RotatingUserAgentMiddleware': 400, # Custom midleware rotating user agents per request
     'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware': None, # Turns off built in user agent middleware
     
-    # 'scrapy_crawler.middlewares.RequestTimingMiddleware': 543,
+    # 'search_engine_scraper.middlewares.RequestTimingMiddleware': 543,
     'scrapy_zyte_api.ScrapyZyteAPIDownloaderMiddleware': 543,
 }
 

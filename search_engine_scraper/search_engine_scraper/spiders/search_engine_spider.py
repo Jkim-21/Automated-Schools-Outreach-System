@@ -1,5 +1,4 @@
 import scrapy
-from scrapy_splash import SplashRequest
 from automated_schools_outreach_system import scraping_prep, db_manager, config
 import os
 
@@ -11,7 +10,7 @@ class SearchEngineSpider(scrapy.Spider):
         super().__init__()
         self.db_connection = ''
         self.dataset_target = 'setWebsiteLinks2'
-        self.state_names = ['ALABAMA', 'ALASKA', 'ARIZONA', 'ARKANSAS', 'CALIFORNIA', 'COLORADO', 'CONNECTICUT', 'DELAWARE', 'DISTRICT OF COLUMBIA', 'FLORIDA', 'GEORGIA']
+        self.state_names = ['NEW JERSEY', 'NEW MEXICO', 'NEW YORK', 'NORTH CAROLINA', 'NORTH DAKOTA', 'OHIO', 'OKLAHOMA', 'OREGON', 'PENNSYLVANIA', 'RHODE ISLAND', 'SOUTH CAROLINA', 'SOUTH DAKOTA', 'TENNESSEE', 'TEXAS', 'UTAH', 'VERMONT', 'VIRGINIA', 'WASHINGTON', 'WEST VIRGINIA', 'WISCONSIN', 'WYOMING', 'BUREAU OF INDIAN EDUCATION', 'AMERICAN SAMOA', 'GUAM', 'NORTHERN MARIANAS', 'PUERTO RICO', 'U.S. VIRGIN ISLANDS']
         
     def start_requests(self):
         self.db_connection = db_manager.get_db_connection(config.DATABASE_CONFIG)

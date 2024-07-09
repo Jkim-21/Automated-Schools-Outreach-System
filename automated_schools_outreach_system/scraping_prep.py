@@ -50,7 +50,7 @@ def array_of_remaining_schools(db_connection, state_names):
         return []
 
 def array_of_specific_school(db_connection, id):
-    state_query = f"SELECT * FROM search_engine_results WHERE INDEX_NUMBER = %s"
+    state_query = f"SELECT * FROM search_engine_results2 WHERE INDEX_NUMBER = %s"
     state_df = pd.read_sql(state_query, db_connection, params=(id,))
     
     school_array = []
@@ -61,7 +61,7 @@ def array_of_specific_school(db_connection, id):
             
             initial_string = f"{str(row.iloc[1])} website"
             rest_of_string = " ".join([str(item) for item in row.iloc[2:5]])
-            concatenated_row = f"{initial_string}"
+            concatenated_row = f"{initial_string} {rest_of_string}"
             
             id_school_pair.append(concatenated_row)
             school_array.append(id_school_pair)

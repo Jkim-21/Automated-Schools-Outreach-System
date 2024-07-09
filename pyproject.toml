@@ -3,12 +3,5 @@ name = "C4C_ASOS"
 version = "1.0.0"
 description = "Crescendo for a Cause automated schools outreach system tool"
 
-dependencies = [
-    "scrapy",
-    "mysql-connector-python",
-    "mysqlclient",
-    "python-dotenv"
-]
-
 [tool.setuptools]
-packages = ['automated_schools_outreach_system', 'crawlers','cscrapers']
+packages = ['automated_schools_outreach_system', 'search_engine_scraper', 'school_scraper']
