@@ -10,8 +10,8 @@ class SearchEngineSpider(scrapy.Spider):
     def __init__(self, *args, **kwargs):
         super().__init__()
         self.db_connection = ''
-        self.dataset_target = 'setWebsiteLinks'
-        self.state_names = ['ALABAMA', 'ALASKA', 'ARIZONA', 'ARKANSAS', 'CALIFORNIA']
+        self.dataset_target = 'setWebsiteLinks2'
+        self.state_names = ['ALABAMA', 'ALASKA', 'ARIZONA', 'ARKANSAS', 'CALIFORNIA', 'COLORADO', 'CONNECTICUT', 'DELAWARE', 'DISTRICT OF COLUMBIA', 'FLORIDA', 'GEORGIA']
         
     def start_requests(self):
         self.db_connection = db_manager.get_db_connection(config.DATABASE_CONFIG)

@@ -49,10 +49,8 @@ EXTENSIONS = {
     'scrapy.extensions.corestats.CoreStats': 500,
 }
 
-
 LOG_FILE = './crawl_results/scrapy_log.txt'
-# LOG_LEVEL = 'INFO'
-# LOG_ENABLED = False
+LOG_LEVEL = 'ERROR'
 
 ROBOTSTXT_OBEY = False
 
