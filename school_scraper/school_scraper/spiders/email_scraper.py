@@ -19,9 +19,9 @@ class email_scraper(scrapy.Spider):
         self.visited_urls = set()
         self.max_depth = int(max_depth)
         self.basedomains = [urlparse(url).netloc for url in self.start_urls]
-        self.keywebsites = ['directory','activities','music','handbook',]
-        self.keywords = ['admin@','music@','band@','choir@','deansoffice@','dean@',]
-        self.blacklist_keywords = ['news','archive','transport','sports','publication','javascript','tel',]
+        self.keywebsites = ['directory','activities','music','handbook','administration','faculty','staff','contact','about','departments','art','band','orchestra','fine-arts','instrument','performing-arts','performance']
+        self.keywords = ['admin@','music@','band@','choir@','@orchestra','art@','arts@','deansoffice@','dean@','info@','contact@','office@','principal@','headmaster@','contact@','help@','schooloffice@','frontdesk@','officeadmin@','academicoffice@']
+        self.blacklist_keywords = ['news','archive','transport','sports','publication','javascript','tel','forum','calendar','alumni','student','gallery','blog','shop','store','domate','donations','careers','recruitment','event','merch']
         self.completed_domains = set()
 
         with open("results.txt","w"):
