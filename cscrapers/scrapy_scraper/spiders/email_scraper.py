@@ -85,7 +85,7 @@ class email_scraper(scrapy.Spider):
 
         if emails:
             #needs to be the original url or will fail
-            emails = store_emails.store_emails(response.meta['base_url'], emails)
+            emails = store_emails.store_emails(response.meta['base_url'], emails, response.url)
 
         if emails: #### **** this needs to be removed once issues are fixed
             for email in set(emails):

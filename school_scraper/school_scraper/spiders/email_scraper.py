@@ -1,7 +1,7 @@
 import scrapy
 import re
 from urllib.parse import urlparse
-from automated_schools_outreach_system import config, check_scraped, store_emails
+from automated_schools_outreach_system import config, check_scraped, store_emails, debug
 
 class email_scraper(scrapy.Spider):
     name = 'email_scraper'
@@ -19,10 +19,15 @@ class email_scraper(scrapy.Spider):
         self.visited_urls = set()
         self.max_depth = int(max_depth)
         self.basedomains = [urlparse(url).netloc for url in self.start_urls]
-        self.keywebsites = ['directory','activities','music','handbook']
+        self.keywebsites = ['directory','activities','music','handbook',]
         self.keywords = ['admin@','music@','band@','choir@','deansoffice@','dean@',]
-        self.blacklist_keywords = ['news','archive','transport','sports','publication']
+        self.blacklist_keywords = ['news','archive','transport','sports','publication','javascript','tel',]
         self.completed_domains = set()
+
+        with open("results.txt","w"):
+            pass
+
+
         
 
     #check_scraped can be found in ASOS folder
@@ -62,13 +67,13 @@ class email_scraper(scrapy.Spider):
         if emails:
             
             #needs to be the original url or will fail
-            emails = store_emails.store_emails(response.meta['base_url'], emails)
+            emails = store_emails.store_emails(response.meta['base_url'], emails, response.url)
 
-        for email in set(emails):
+            for email in set(emails):
 
-            if any(keyword in email for keyword in self.keywords):
-                self.completed_domains.add(cur_domain)
-                return #terminate thread if keyword match
+                if any(keyword in email for keyword in self.keywords):
+                    self.completed_domains.add(cur_domain)
+                    return #te rminate thread if keyword match
 
         links = response.css('a::attr(href)').getall()
 

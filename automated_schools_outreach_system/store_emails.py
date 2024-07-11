@@ -6,9 +6,7 @@ from automated_schools_outreach_system import config, debug
 import mysql.connector
 import json
 
-def store_emails(url, emails):
-
-
+def store_emails(school_website, emails, url):
 
     cursor = None
     connection = None
@@ -16,65 +14,62 @@ def store_emails(url, emails):
     try:
 
         #the emails should already be a set but this is a failsafe incase the code is changed 
-        unique_emails = set(emails)
+        
+
+        unique_emails = {email: url for email in set(emails)}
 
         #establish connection and create cursor
         connection = mysql.connector.connect(**config.DATABASE_CONFIG)
         cursor = connection.cursor()
 
-       
-
         #If there already are emails in the DB then pull them
             #there will be emails from other threads in the entry basically every time
 
-        cursor.execute("SELECT * FROM with_emails WHERE WEBSITE = %s",(url,))
+        cursor.execute("SELECT * FROM with_emails WHERE WEBSITE = %s",(school_website,))
         
-        
-
         result = cursor.fetchone()
         #it is okay for this ^^^ to return nothing
 
-        
 
         if result:
-            
-            debug.debug("try-if")
+
+            debug.debug("try-if.1")
 
             #if there are already emails in the 
             if result[4]:
-                existing_emails_from_database = set(json.loads(result[4]))
-                unique_emails = set(list(unique_emails.union(existing_emails_from_database)))
+                existing_emails_from_database = json.loads(result[4])
+                existing_emails_from_database.update(unique_emails)
+                unique_emails = (existing_emails_from_database)
+
+            debug.debug("try-if.2")
 
             #update the set of emails in the 5th column
             #add new emails and do not allow duplcates
 
             query = "UPDATE with_emails SET emails = %s WHERE WEBSITE = %s"
-            cursor.execute(query, (json.dumps(unique_emails), url))
+            debug.debug("try-if.3")
+            cursor.execute(query, (json.dumps(unique_emails), school_website))
+            
+            debug.debug("try-if.end")
+
 
         else:
             
             debug.debug("try-else.1")
 
-            # Insert new record with emails field set to an empty JSON array
+            # Insert new record with emails field set to the current unique_emails
             query = ("INSERT INTO with_emails (INDEX_NUMBER, STATENAME, SCH_NAME, WEBSITE, emails) "
                      "SELECT INDEX_NUMBER, STATENAME, SCH_NAME, WEBSITE, %s FROM search_engine_results "
                      "WHERE WEBSITE = %s")
-
+            cursor.execute(query, (json.dumps(unique_emails), school_website))
             debug.debug("try-else.2")
-
-            cursor.execute(query, (json.dumps([]), url))
-
-            # Update the new record with emails
-            query = "UPDATE with_emails SET emails = %s WHERE WEBSITE = %s"
-            cursor.execute(query, (json.dumps(list(unique_emails)), url))
-
-            
-            debug.debug("try-else.3")
         
         #housekeeping pt 1
-        debug.debug("try-end")
+        debug.debug("try-end-start")
 
         connection.commit()
+
+        debug.debug("try-end-end")
         
 
     except mysql.connector.Error as error:
