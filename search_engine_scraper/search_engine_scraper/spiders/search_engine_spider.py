@@ -1,6 +1,7 @@
 import scrapy
-from automated_schools_outreach_system import scraping_prep, db_manager, config
 import os
+
+from automated_schools_outreach_system.search_engine import db_manager, scraping_prep
 
 class SearchEngineSpider(scrapy.Spider):
     name = "search_engine_spider"
@@ -9,12 +10,12 @@ class SearchEngineSpider(scrapy.Spider):
     def __init__(self, *args, **kwargs):
         super().__init__()
         self.db_connection = ''
-        self.dataset_target = 'setWebsiteLinks2'
-        self.state_names = ['NEW JERSEY', 'NEW MEXICO', 'NEW YORK', 'NORTH CAROLINA', 'NORTH DAKOTA', 'OHIO', 'OKLAHOMA', 'OREGON', 'PENNSYLVANIA', 'RHODE ISLAND', 'SOUTH CAROLINA', 'SOUTH DAKOTA', 'TENNESSEE', 'TEXAS', 'UTAH', 'VERMONT', 'VIRGINIA', 'WASHINGTON', 'WEST VIRGINIA', 'WISCONSIN', 'WYOMING', 'BUREAU OF INDIAN EDUCATION', 'AMERICAN SAMOA', 'GUAM', 'NORTHERN MARIANAS', 'PUERTO RICO', 'U.S. VIRGIN ISLANDS']
+        self.dataset_protocol = 'setWebsiteLinks2'
+        self.state_names = []
         
     def start_requests(self):
-        self.db_connection = db_manager.get_db_connection(config.DATABASE_CONFIG)
-        search_queries = scraping_prep.array_of_remaining_schools(self.db_connection, self.state_names)
+        self.db_connection = db_manager.get_db_connection()
+        search_queries = scraping_prep.array_of_specific_school(self.db_connection, self.state_names)
         self.db_connection.close()
 
         for id_query_pair in search_queries:
@@ -27,7 +28,7 @@ class SearchEngineSpider(scrapy.Spider):
 
     def parse(self, response):
         # directory = './crawl_results'
-        # filename = os.path.join(directory, 'response.html')
+        # filename = os.path.join(directory, 'respo1nse.html')
         
         # if not os.path.exists(directory):
         #     os.makedirs(directory)
@@ -53,7 +54,7 @@ class SearchEngineSpider(scrapy.Spider):
         
         try:
             if len(links) > 0:
-                db_manager.update_links_in_db(id, links, self.dataset_target)
+                db_manager.update_links_in_db(id, links, self.dataset_protocol)
         except Exception as err:
             self.logger.error(f"Error updating database: {err}")
         finally:

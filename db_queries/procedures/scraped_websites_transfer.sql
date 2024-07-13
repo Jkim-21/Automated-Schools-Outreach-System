@@ -39,8 +39,6 @@ END //
 DELIMITER;
 
 
-
-
 DELIMITER //
 CREATE PROCEDURE SetWebsiteTestLinks(
     IN p_id INT,

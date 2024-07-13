@@ -9,7 +9,8 @@ from scrapy import signals
 from itemadapter import is_item, ItemAdapter
 
 from fake_useragent import UserAgent
-import random
+
+import time
 
 class ScrapyCrawlerSpiderMiddleware:
     # Not all methods need to be defined. If a method is not defined,
@@ -111,8 +112,6 @@ class RotatingUserAgentMiddleware:
     
     def process_request(self, request, spider):
         request.headers['User-Agent'] = self.ua.random
-
-import time
 
 class RequestTimingMiddleware:
     def process_request(self, request, spider):

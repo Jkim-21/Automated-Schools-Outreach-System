@@ -12,3 +12,5 @@ output.json
 links.txt
 results.txt
 db_testing.sql
+scrape_results/
+sql_datasets/

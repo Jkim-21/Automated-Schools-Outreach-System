@@ -11,8 +11,7 @@ BOT_NAME = "school_scraper"
 SPIDER_MODULES = ["school_scraper.spiders"]
 NEWSPIDER_MODULE = "school_scraper.spiders"
 
-
-ROBOTSTXT_OBEY = True
+ROBOTSTXT_OBEY = False
 
 # Configure maximum concurrent requests performed by Scrapy (default: 16)
 CONCURRENT_REQUESTS = 200
@@ -47,11 +46,15 @@ FEED_EXPORT_ENCODING = "utf-8"
 FEED_FORMAT = 'json'
 FEED_URI = 'output.json'
 
+LOG_LEVEL = 'ERROR'
+LOG_FILE = './scrape_results/scrapy_log.txt'
 
+DOWNLOAD_HANDLERS = {
+    "http": "scrapy_playwright.handler.ScrapyPlaywrightDownloadHandler",
+    "https": "scrapy_playwright.handler.ScrapyPlaywrightDownloadHandler",
+}
 
-
-
-
+TWISTED_REACTOR = "twisted.internet.asyncioreactor.AsyncioSelectorReactor"
 # Enable or disable spider middlewares
 # See https://docs.scrapy.org/en/latest/topics/spider-middleware.html
 #SPIDER_MIDDLEWARES = {

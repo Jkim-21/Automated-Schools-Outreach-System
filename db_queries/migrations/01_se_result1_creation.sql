@@ -18,8 +18,6 @@ INSERT INTO search_engine_results_backup SELECT * from search_engine_results;
 
 COMMIT;
 
-
-
 START TRANSACTION:
 
 DROP TABLE IF EXISTS search_engine_test;

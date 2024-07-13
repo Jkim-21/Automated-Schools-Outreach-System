@@ -9,6 +9,7 @@ def array_of_schools(db_connection, state_names):
     state_df = pd.read_sql(state_query, db_connection, params=tuple(state_names))
     
     school_array = []
+    
     try:
         for index, row in state_df.iterrows():
             id_school_pair = []
@@ -32,6 +33,7 @@ def array_of_remaining_schools(db_connection, state_names):
     state_df = pd.read_sql(state_query, db_connection, params=tuple(state_names))
     
     school_array = []
+    
     try:
         for index, row in state_df.iterrows():
             id_school_pair = []
@@ -54,6 +56,7 @@ def array_of_specific_school(db_connection, id):
     state_df = pd.read_sql(state_query, db_connection, params=(id,))
     
     school_array = []
+    
     try:
         for index, row in state_df.iterrows():
             id_school_pair = []
