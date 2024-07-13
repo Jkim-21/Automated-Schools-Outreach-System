@@ -2,13 +2,13 @@
 from automated_schools_outreach_system import config
 import mysql.connector
 
-def get_unparsed(dataset, index_threshold):
+def get_unparsed(dataset, state_name):
     try:
         connection = mysql.connector.connect(**config.DATABASE_CONFIG, auth_plugin='mysql_native_password')
         cursor = connection.cursor()
         
         #get all the links from the raw crawling results
-        cursor.execute(f"SELECT SCRAPED_WEBSITE FROM {dataset} WHERE INDEX_NUMBER < %s", (index_threshold,))
+        cursor.execute(f"SELECT SCRAPED_WEBSITE FROM {dataset} WHERE INDEX_NUMBER < %s", (state_name,))
         list_of_website_tuples = cursor.fetchall()
         master_list = [item[0] for item in list_of_website_tuples]      
         return master_list
@@ -23,13 +23,13 @@ def get_unparsed(dataset, index_threshold):
         if connection:
             connection.close()
             
-def get_remaining_unparsed(dataset, index_threshold):
+def get_remaining_unparsed(dataset, index_number):
     try:
         connection = mysql.connector.connect(**config.DATABASE_CONFIG, auth_plugin='mysql_native_password')
         cursor = connection.cursor()
         
         #get all the links from the raw crawling results
-        cursor.execute(f"SELECT SCRAPED_WEBSITE FROM {dataset} WHERE SCRAPED_EMAILS IS NULL AND INDEX_NUMBER < %s", (index_threshold,))
+        cursor.execute(f"SELECT SCRAPED_WEBSITE FROM {dataset} WHERE SCRAPED_EMAILS IS NULL AND INDEX_NUMBER < %s", (index_number,))
         list_of_website_tuples = cursor.fetchall()
         master_list = [item[0] for item in list_of_website_tuples]           
         return master_list

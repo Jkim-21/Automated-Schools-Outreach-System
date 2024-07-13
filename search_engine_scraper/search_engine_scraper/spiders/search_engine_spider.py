@@ -59,5 +59,3 @@ class SearchEngineSpider(scrapy.Spider):
             self.logger.error(f"Error updating database: {err}")
         finally:
             self.db_connection.close()
-
-            

@@ -7,6 +7,7 @@ import logging
 
 class email_scraper(scrapy.Spider):
     name = 'email_scraper'
+    MAX_VISITED_URLS = 10000
     
     # CALL:
     # cd to spiders
@@ -17,7 +18,7 @@ class email_scraper(scrapy.Spider):
         
         self.dataset_protocol = 'setEmailsTest'
         self.dataset = 'scraped_school_emails_backup'
-        self.index_threshold = 1000
+        self.filtering_key = 30
         
         self.start_urls = self.read_urls()
 
@@ -33,19 +34,20 @@ class email_scraper(scrapy.Spider):
         self.completed_domain_url = set()
             
     def start_requests(self):
-        for url in self.start_urls:
+        for start_url in self.start_urls:
             yield scrapy.Request(
-                url,
+                url = start_url,
                 callback=self.parse,
                 meta={
                     'depth': 0,
-                    'base_url': url,
-                    'link': None
+                    'base_url': start_url,
+                    'link': None,
+                    'playwright': True,
                     })
             
     # Call check_scraped to retrieve a list of unparsed links
     def read_urls(self):
-        return check_scraped.get_remaining_unparsed(self.dataset, self.index_threshold)
+        return check_scraped.get_remaining_unparsed(self.dataset, self.filtering_key)
 
     def parse(self, response):
         content_type = response.headers.get('Content-Type', b'').decode('utf-8')
@@ -55,10 +57,14 @@ class email_scraper(scrapy.Spider):
 
         # Retrieve the current depth and then ensure that the maximum depth has not been reached / passed
         current_depth = response.meta['depth']
+        base_url = response.meta['base_url']
 
-        if (response.url in self.start_urls and response.meta['depth'] != 0) or current_depth > self.max_depth:
+        if (response.url in self.start_urls and current_depth != 0) or current_depth > self.max_depth:
             return
         
+        if len(self.visited_urls) > self.MAX_VISITED_URLS:
+            self.visited_urls = set()
+            
         self.visited_urls.add(response.url)
         
         # Set up to determine whether a good enough email has been found in this domain
@@ -69,7 +75,7 @@ class email_scraper(scrapy.Spider):
 
         # Needs to be a url in the domain or will fail
         if emails:
-            store_emails.store_emails(response.meta['base_url'], emails, response.url, self.dataset, self.dataset_protocol)
+            store_emails.store_emails(base_url, emails, response.url, self.dataset, self.dataset_protocol)
             
         # Adds the domain name to the set of completed domains so that we don't have to parse the same website in the scraper since we've alread found a keyword
         
@@ -93,7 +99,7 @@ class email_scraper(scrapy.Spider):
         for link in filtered_links:
             parsed_link = urlparse(link)
             domain_link = parsed_link.netloc
-            base_domain_url = urlparse(response.meta['base_url']).netloc
+            base_domain_url = urlparse(base_url).netloc
 
             if (domain_link in base_domain_url and
                 link not in self.visited_urls and
@@ -101,12 +107,13 @@ class email_scraper(scrapy.Spider):
                 not any (word in link for word in self.blacklist_keywords) and 
                 not link.endswith(self.excluded_extensions)):
                 self.visited_urls.add(link)
-                
+                print(link)
                 yield scrapy.Request(
-                    link,
+                    url = link,
                     callback=self.parse,
                     meta={
                         'depth': current_depth + 1,
-                        'base_url': response.meta['base_url'],
-                        'link': link
+                        'base_url': base_url,
+                        'link': link,
+                        'playwright': True,
                         })
