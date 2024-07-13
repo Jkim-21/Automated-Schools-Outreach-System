@@ -33,7 +33,7 @@ AUTOTHROTTLE_START_DELAY = 0.1
 AUTOTHROTTLE_MAX_DELAY = 5
 # The average number of requests Scrapy should be sending in parallel to
 # each remote server
-AUTOTHROTTLE_TARGET_CONCURRENCY = 10.0
+AUTOTHROTTLE_TARGET_CONCURRENCY = 20.0
 # Enable showing throttling stats for every response received:
 AUTOTHROTTLE_DEBUG = False
 
@@ -49,12 +49,6 @@ FEED_URI = 'output.json'
 LOG_LEVEL = 'ERROR'
 LOG_FILE = './scrape_results/scrapy_log.txt'
 
-DOWNLOAD_HANDLERS = {
-    "http": "scrapy_playwright.handler.ScrapyPlaywrightDownloadHandler",
-    "https": "scrapy_playwright.handler.ScrapyPlaywrightDownloadHandler",
-}
-
-TWISTED_REACTOR = "twisted.internet.asyncioreactor.AsyncioSelectorReactor"
 # Enable or disable spider middlewares
 # See https://docs.scrapy.org/en/latest/topics/spider-middleware.html
 #SPIDER_MIDDLEWARES = {

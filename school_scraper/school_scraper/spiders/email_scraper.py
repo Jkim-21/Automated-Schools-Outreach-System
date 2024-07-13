@@ -5,7 +5,6 @@ from automated_schools_outreach_system.school_website import check_scraped, stor
 from automated_schools_outreach_system import config
 import logging
 
-
 class email_scraper(scrapy.Spider):
     name = 'email_scraper'
     
@@ -18,7 +17,7 @@ class email_scraper(scrapy.Spider):
         
         self.dataset_protocol = 'setEmailsTest'
         self.dataset = 'scraped_school_emails_backup'
-        self.index_threshold = 50
+        self.index_threshold = 1000
         
         self.start_urls = self.read_urls()
 
@@ -39,7 +38,6 @@ class email_scraper(scrapy.Spider):
                 url,
                 callback=self.parse,
                 meta={
-                    'playwright': True,
                     'depth': 0,
                     'base_url': url,
                     'link': None
@@ -57,13 +55,14 @@ class email_scraper(scrapy.Spider):
 
         # Retrieve the current depth and then ensure that the maximum depth has not been reached / passed
         current_depth = response.meta['depth']
-        
+
         if (response.url in self.start_urls and response.meta['depth'] != 0) or current_depth > self.max_depth:
             return
         
+        self.visited_urls.add(response.url)
+        
         # Set up to determine whether a good enough email has been found in this domain
         # domain_url = urlparse(response.url).netloc
-        
 
         # Email regex of the form {any string} + {@} + {any string} + . + {any common email tail}
         emails = set(re.findall(r'[a-zA-Z0-9._-]+@[a-zA-Z0-9-]+\.(?:com|net|edu|org)', response.text, re.IGNORECASE))
@@ -95,22 +94,19 @@ class email_scraper(scrapy.Spider):
             parsed_link = urlparse(link)
             domain_link = parsed_link.netloc
             base_domain_url = urlparse(response.meta['base_url']).netloc
-            
+
             if (domain_link in base_domain_url and
                 link not in self.visited_urls and
                 # domain_url not in self.completed_domain_url and
                 not any (word in link for word in self.blacklist_keywords) and 
                 not link.endswith(self.excluded_extensions)):
-                print(link)
                 self.visited_urls.add(link)
                 
                 yield scrapy.Request(
                     link,
                     callback=self.parse,
                     meta={
-                        'playwright': True,
                         'depth': current_depth + 1,
                         'base_url': response.meta['base_url'],
                         'link': link
-                        },
-                    wait_time=10)
+                        })
