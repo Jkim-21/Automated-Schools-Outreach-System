@@ -18,7 +18,7 @@ class email_scraper(scrapy.Spider):
         
         self.dataset_protocol = 'setEmailsTest'
         self.dataset = 'scraped_school_emails_backup'
-        self.filtering_key = 30
+        self.filtering_key = 120
         
         self.start_urls = self.read_urls()
 
@@ -71,7 +71,7 @@ class email_scraper(scrapy.Spider):
         # domain_url = urlparse(response.url).netloc
 
         # Email regex of the form {any string} + {@} + {any string} + . + {any common email tail}
-        emails = set(re.findall(r'[a-zA-Z0-9._-]+@[a-zA-Z0-9-]+\.(?:com|net|edu|org)', response.text, re.IGNORECASE))
+        emails = set(re.findall(r'[a-zA-Z0-9._-]+@[a-zA-Z0-9-]+\.(?:com|net|edu|org)|[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.us', response.text, re.IGNORECASE))
 
         # Needs to be a url in the domain or will fail
         if emails:
