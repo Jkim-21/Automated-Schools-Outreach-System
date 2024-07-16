@@ -2,13 +2,13 @@
 from automated_schools_outreach_system import config
 import mysql.connector
 
-def get_unparsed(dataset, state_name):
+def get_unparsed(dataset, id_floor, id_ceiling):
     try:
         connection = mysql.connector.connect(**config.DATABASE_CONFIG, auth_plugin='mysql_native_password')
         cursor = connection.cursor()
         
         #get all the links from the raw crawling results
-        cursor.execute(f"SELECT SCRAPED_WEBSITE FROM {dataset} WHERE INDEX_NUMBER < %s", (state_name,))
+        cursor.execute(f"SELECT SCRAPED_WEBSITE FROM {dataset} WHERE INDEX_NUMBER >= %s AND INDEX_NUMBER <= %s", (id_floor, id_ceiling))
         list_of_website_tuples = cursor.fetchall()
         master_list = [item[0] for item in list_of_website_tuples]      
         return master_list
@@ -23,13 +23,13 @@ def get_unparsed(dataset, state_name):
         if connection:
             connection.close()
             
-def get_remaining_unparsed(dataset, index_number):
+def get_remaining_unparsed(dataset, id_floor, id_ceiling):
     try:
         connection = mysql.connector.connect(**config.DATABASE_CONFIG, auth_plugin='mysql_native_password')
         cursor = connection.cursor()
         
         #get all the links from the raw crawling results
-        cursor.execute(f"SELECT SCRAPED_WEBSITE FROM {dataset} WHERE SCRAPED_EMAILS IS NULL AND INDEX_NUMBER < %s", (index_number,))
+        cursor.execute(f"SELECT SCRAPED_WEBSITE FROM {dataset} WHERE SCRAPED_EMAILS IS NULL AND INDEX_NUMBER >= %s AND INDEX_NUMBER <= %s", (id_floor, id_ceiling))
         list_of_website_tuples = cursor.fetchall()
         master_list = [item[0] for item in list_of_website_tuples]           
         return master_list
@@ -44,12 +44,12 @@ def get_remaining_unparsed(dataset, index_number):
         if connection:
             connection.close()
             
-def get_specific_unparsed(dataset, index):
+def get_specific_unparsed(dataset, id):
     try:
         connection = mysql.connector.connect(**config.DATABASE_CONFIG, auth_plugin='mysql_native_password')
         cursor = connection.cursor()
         
-        cursor.execute(f"SELECT SCRAPED_WEBSITE FROM {dataset} WHERE INDEX_NUMBER = %s", (index,))
+        cursor.execute(f"SELECT SCRAPED_WEBSITE FROM {dataset} WHERE INDEX_NUMBER = %s", (id,))
         list_of_website_tuples = cursor.fetchall()
         master_list = [item[0] for item in list_of_website_tuples]           
         return master_list

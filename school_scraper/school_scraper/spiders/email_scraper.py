@@ -3,22 +3,18 @@ import re
 from urllib.parse import urlparse
 from automated_schools_outreach_system.school_website import check_scraped, store_emails, debug
 from automated_schools_outreach_system import config
-import logging
 
 class email_scraper(scrapy.Spider):
     name = 'email_scraper'
     MAX_VISITED_URLS = 10000
-    
-    # CALL:
-    # cd to spiders
-    # scrapy crawl email_scraper -a max_depth=1 (any int or whole float)
 
     def __init__(self, max_depth=2, *args, **kwargs):
         super().__init__(*args, **kwargs)
         
         self.dataset_protocol = 'setEmailsTest'
         self.dataset = 'scraped_school_emails_backup'
-        self.filtering_key = 120
+        self.id_floor = 1
+        self.id_ceiling = 2
         
         self.start_urls = self.read_urls()
 
@@ -47,7 +43,7 @@ class email_scraper(scrapy.Spider):
             
     # Call check_scraped to retrieve a list of unparsed links
     def read_urls(self):
-        return check_scraped.get_remaining_unparsed(self.dataset, self.filtering_key)
+        return check_scraped.get_remaining_unparsed(self.dataset, self.id_floor, self.id_ceiling)
 
     def parse(self, response):
         content_type = response.headers.get('Content-Type', b'').decode('utf-8')
@@ -107,7 +103,6 @@ class email_scraper(scrapy.Spider):
                 not any (word in link for word in self.blacklist_keywords) and 
                 not link.endswith(self.excluded_extensions)):
                 self.visited_urls.add(link)
-                print(link)
                 yield scrapy.Request(
                     url = link,
                     callback=self.parse,
