@@ -1,4 +1,5 @@
 DELIMITER //
+DROP PROCEDURE IF EXISTS setEmails
 
 CREATE PROCEDURE setEmails (
     IN p_email_list TEXT,
@@ -12,8 +13,10 @@ BEGIN
 END //
 DELIMITER;
 
-
 DELIMITER //
+
+DROP PROCEDURE IF EXISTS `setEmailsTest`
+
 CREATE PROCEDURE setEmailsTest (
     IN p_email_list TEXT,
     IN p_school_website TEXT

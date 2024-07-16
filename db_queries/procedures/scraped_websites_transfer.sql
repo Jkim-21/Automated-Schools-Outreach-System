@@ -17,8 +17,6 @@ BEGIN
 END //
 DELIMITER;
 
-
-
 DELIMITER //
 DROP PROCEDURE IF EXISTS SetWebsiteLinks2
 
@@ -46,7 +44,6 @@ CREATE PROCEDURE SetWebsiteTestLinks(
     IN p_link2 VARCHAR(255),
     IN p_link3 VARCHAR(255)
 )
-
 BEGIN
     UPDATE search_engine_test
     SET SCRAPED_WEBSITE_1 = p_link1, 
