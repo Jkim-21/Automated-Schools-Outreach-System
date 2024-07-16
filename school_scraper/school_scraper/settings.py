@@ -46,7 +46,7 @@ FEED_EXPORT_ENCODING = "utf-8"
 FEED_FORMAT = 'json'
 FEED_URI = 'output.json'
 
-LOG_LEVEL = 'INFO'
+LOG_LEVEL = 'WARNING'
 LOG_FILE = './scrape_results/scrapy_log.txt'
 
 RETRY_ENABLED = False
