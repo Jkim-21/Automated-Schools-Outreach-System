@@ -25,7 +25,7 @@ DELETE FROM scraped_school_emails WHERE SCRAPED_WEBSITE LIKE '%gloverelementarys
 DELETE FROM scraped_school_emails WHERE SCRAPED_WEBSITE LIKE '%nces.ed.gov%';
 DELETE FROM scraped_school_emails WHERE SCRAPED_WEBSITE LIKE '%www.mass.gov%';
 DELETE FROM scraped_school_emails WHERE SCRAPED_WEBSITE LIKE '%https://www.swampscottps.org/contact/%';
-
+DELETE FROM scraped_school_emails WHERE SCRAPED_WEBSITE LIKE '%https://www.eastlongmeadowma.gov/Directory/Home/DepartmentListing?DID=19%';
 
 UPDATE scraped_school_emails SET `SCRAPED_WEBSITE` = 'https://www.franklinps.net/o/gmpes'
 WHERE `SCRAPED_WEBSITE` = 'https://www.franklinps.net/gerald-m-parmenter-elementary-school/grade-2'

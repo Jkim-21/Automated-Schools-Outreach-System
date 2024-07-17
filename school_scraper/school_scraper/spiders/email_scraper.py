@@ -67,7 +67,7 @@ class email_scraper(scrapy.Spider):
         # domain_url = urlparse(response.url).netloc
 
         # Email regex of the form {any string} + {@} + {any string} + . + {any common email tail}
-        emails = set(re.findall(r'[a-zA-Z0-9._-]+@[a-zA-Z0-9-]+\.(?:com|net|edu|org)|[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.us', response.text, re.IGNORECASE))
+        emails = set(re.findall(r'[a-zA-Z0-9._-]+@[a-zA-Z0-9-]+\.(?:com|net|edu|org|gov)|[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.us', response.text, re.IGNORECASE))
 
         # Needs to be a url in the domain or will fail
         if emails:
