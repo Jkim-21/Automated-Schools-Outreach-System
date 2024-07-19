@@ -80,7 +80,6 @@ UPDATE scraped_school_emails SET `SCRAPED_WEBSITE` = 'https://www.nps.org/o/nms'
 
 UPDATE scraped_school_emails SET `SCRAPED_WEBSITE` = 'https://www.belmont.k12.ma.us/o/bbes' WHERE `SCRAPED_WEBSITE` = 'https://www.belmont-ma.gov/facilities-department/pages/mary-lee-burbank-elementary-school'
 
-UPDATE scraped_school_emails SET `SCRAPED_WEBSITE` = 'https://winnbrookexl.org/' WHERE `SCRAPED_WEBSITE` = 'https://www.belmont.k12.ma.us/o/wbes'
-
+UPDATE scraped_school_emails SET `SCRAPED_WEBSITE` = 'https://www.belmont.k12.ma.us/o/wbes' WHERE `SCRAPED_WEBSITE` = 'https://winnbrookexl.org/'
 
 COMMIT;
