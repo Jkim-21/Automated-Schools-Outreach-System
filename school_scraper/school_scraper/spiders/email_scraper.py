@@ -6,15 +6,15 @@ from automated_schools_outreach_system import config
 
 class email_scraper(scrapy.Spider):
     name = 'email_scraper'
-    MAX_VISITED_URLS = 10000
+    MAX_VISITED_URLS = 25000
 
     def __init__(self, max_depth=2, *args, **kwargs):
         super().__init__(*args, **kwargs)
         
         self.dataset_protocol = 'setEmails'
         self.dataset = 'scraped_school_emails'
-        self.id_floor = 41220
-        self.id_ceiling = 41620
+        self.id_floor = 1
+        self.id_ceiling = 1
         
         self.start_urls = self.read_urls()
 
@@ -23,9 +23,9 @@ class email_scraper(scrapy.Spider):
         
         self.key_websites = ['directory','activities','music','handbook','administration','faculty','staff','contact','about','departments','art','band','orchestra','fine-arts','instrument','performing-arts','performance']
         self.keywords = ['admin@','music@','band@','choir@','@orchestra','art@','arts@','deansoffice@','dean@','principal@', 'schooloffice@']
-        self.blacklist_keywords = ['news','archive','transport','sports','publication','javascript','tel','forum','calendar','alumni','student','gallery','blog','shop','store','domate','donations','careers','recruitment','event','merch, mailto:']
+        self.blacklist_keywords = ['news','archive','transport','sports','publication','javascript','tel','forum','calendar','alumni','student','gallery','blog','shop','store','donate','donations','careers','recruitment','event','merch', 'mailto:']
         self.blacklist_start_keywords = ['news','archive','transport','sports','publication','javascript','tel','forum','calendar','alumni','student','gallery','blog','shop','store','domate','donations','careers','recruitment','event','merch', 'mailto:', '#']
-        self.excluded_extensions = ('.pdf', '.doc', '.docx', '.jpg', '.jpeg', '.png', '.gif', '.bmp', '.tiff', 'pptx', 'ppt', 'webm')
+        self.excluded_extensions = ['.pdf', '.doc', '.docx', '.jpg', '.jpeg', '.png', '.gif', '.bmp', '.tiff', '.pptx', '.ppt', '.webm']
         
         self.completed_domain_url = set()
             
@@ -46,37 +46,34 @@ class email_scraper(scrapy.Spider):
         return check_scraped.get_remaining_unparsed(self.dataset, self.id_floor, self.id_ceiling)
 
     def parse(self, response):
+        current_url = response.url
+        current_domain_url = urlparse(current_url).netloc
+        base_url = response.meta['base_url']
+        base_domain_url = urlparse(base_url).netloc
+        current_depth = response.meta['depth']
+        
+        if base_domain_url not in current_domain_url:
+            self.logger.warning(f"Skipping redirected response outside domain: {response.url}")
+            return
+        
         content_type = response.headers.get('Content-Type', b'').decode('utf-8')
         if 'text' not in content_type:
-            self.logger.warning(f"Skipping non-text response: {response.url}")
-            return
+            self.logger.warning(f"Skipping non-text response: {current_url}")
+            return        
 
-        # Retrieve the current depth and then ensure that the maximum depth has not been reached / passed
-        current_depth = response.meta['depth']
-        base_url = response.meta['base_url']
-
-        if (response.url in self.start_urls and current_depth != 0) or current_depth > self.max_depth:
+        if (current_url in self.start_urls and current_depth != 0) or current_depth > self.max_depth:
             return
         
         if len(self.visited_urls) > self.MAX_VISITED_URLS:
             self.visited_urls = set()
             
-        self.visited_urls.add(response.url)
-        
-        # Set up to determine whether a good enough email has been found in this domain
-        # domain_url = urlparse(response.url).netloc
+        self.visited_urls.add(current_url)
 
         # Email regex of the form {any string} + {@} + {any string} + . + {any common email tail}
-        emails = set(re.findall(r'[a-zA-Z0-9._-]+@[a-zA-Z0-9-]+\.(?:com|net|edu|org|gov)|[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.us', response.text, re.IGNORECASE))
-
-        # Needs to be a url in the domain or will fail
-        if emails:
-            store_emails.store_emails(base_url, emails, response.url, self.dataset, self.dataset_protocol)
+        emails = set(re.findall(r'[a-zA-Z0-9._-]+@[a-zA-Z0-9._-]+\.(?:com|net|edu|org|gov|us)', response.text, re.IGNORECASE))
             
-        # Adds the domain name to the set of completed domains so that we don't have to parse the same website in the scraper since we've alread found a keyword
-        
-        # if any(keyword in emails for keyword in self.keywords):
-        #     self.completed_domain_url.add(domain_url)
+        if emails:
+            store_emails.store_emails(base_url, emails, current_url, self.dataset, self.dataset_protocol)
         
         links = response.css('a::attr(href)').getall()
         filtered_links = [response.urljoin(link) for link in links if not link.startswith(tuple(self.blacklist_start_keywords))]
@@ -93,15 +90,12 @@ class email_scraper(scrapy.Spider):
         
         # Loop through the links 
         for link in filtered_links:
-            parsed_link = urlparse(link)
-            domain_link = parsed_link.netloc
-            base_domain_url = urlparse(base_url).netloc
+            domain_link = urlparse(link).netloc
 
-            if (domain_link in base_domain_url and
+            if (base_domain_url in domain_link and
                 link not in self.visited_urls and
-                # domain_url not in self.completed_domain_url and
                 not any (word in link for word in self.blacklist_keywords) and 
-                not link.endswith(self.excluded_extensions)):
+                not any (link.endswith(ext) for ext in (self.excluded_extensions))):
                 self.visited_urls.add(link)
                 yield scrapy.Request(
                     url = link,

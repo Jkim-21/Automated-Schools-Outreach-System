@@ -26,6 +26,10 @@ DELETE FROM scraped_school_emails WHERE SCRAPED_WEBSITE LIKE '%nces.ed.gov%';
 DELETE FROM scraped_school_emails WHERE SCRAPED_WEBSITE LIKE '%www.mass.gov%';
 DELETE FROM scraped_school_emails WHERE SCRAPED_WEBSITE LIKE '%https://www.swampscottps.org/contact/%';
 DELETE FROM scraped_school_emails WHERE SCRAPED_WEBSITE LIKE '%https://www.eastlongmeadowma.gov/Directory/Home/DepartmentListing?DID=19%';
+DELETE FROM scraped_school_emails WHERE SCRAPED_WEBSITE LIKE '%https://disabilityinfo.org%';
+DELETE FROM scraped_school_emails WHERE SCRAPED_WEBSITE LIKE "%https://www.mywpl.org/?q=roosevelt-branch%";
+DELETE FROM scraped_school_emails WHERE SCRAPED_WEBSITE LIKE "%www.facebook.com%";
+
 
 UPDATE scraped_school_emails SET `SCRAPED_WEBSITE` = 'https://www.franklinps.net/o/gmpes'
 WHERE `SCRAPED_WEBSITE` = 'https://www.franklinps.net/gerald-m-parmenter-elementary-school/grade-2'
@@ -71,5 +75,10 @@ UPDATE scraped_school_emails SET `SCRAPED_WEBSITE` = 'https://www.nps.org/o/nhs'
 UPDATE scraped_school_emails SET `SCRAPED_WEBSITE` = 'https://www.nps.org/o/nes' WHERE `SCRAPED_WEBSITE` = 'https://www.nps.org/node/17/common'
 
 UPDATE scraped_school_emails SET `SCRAPED_WEBSITE` = 'https://www.nps.org/o/nms' WHERE `SCRAPED_WEBSITE` = 'https://www.nps.org/middle-school/grade-6'
+
+UPDATE scraped_school_emails SET `SCRAPED_WEBSITE` = 'https://www.belmont.k12.ma.us/o/bbes' WHERE `SCRAPED_WEBSITE` = 'https://www.belmont-ma.gov/facilities-department/pages/mary-lee-burbank-elementary-school'
+
+UPDATE scraped_school_emails SET `SCRAPED_WEBSITE` = 'https://winnbrookexl.org/' WHERE `SCRAPED_WEBSITE` = 'https://www.belmont.k12.ma.us/o/wbes'
+
 
 COMMIT;
