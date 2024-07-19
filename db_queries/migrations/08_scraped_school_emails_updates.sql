@@ -9,11 +9,13 @@ DELETE FROM scraped_school_emails WHERE `SCRAPED_WEBSITE` LIKE '%dragonflyathlet
 DELETE FROM scraped_school_emails WHERE `SCRAPED_WEBSITE` LIKE '%app.c2cschools.com%';
 DELETE FROM scraped_school_emails WHERE `SCRAPED_WEBSITE` LIKE '%greatschools.com%';
 DELETE FROM scraped_school_emails WHERE `SCRAPED_WEBSITE` LIKE '%greatschools.org%';
-DELETE FROM scraped_school_emails WHERE `SCRAPED_WEBSITE` LIKE '%hospital%';
+DELETE FROM scraped_school_emails WHERE `SCH_NAME` LIKE '%hospital%';
 DELETE FROM scraped_school_emails WHERE `SCH_NAME` LIKE '%juvenile%';
 DELETE FROM scraped_school_emails WHERE `SCH_NAME` LIKE '%jail%';
 DELETE FROM scraped_school_emails WHERE `SCH_NAME` LIKE '%prison%';
 DELETE FROM scraped_school_emails WHERE `SCH_NAME` LIKE '%correctional%';
+DELETE FROM scraped_school_emails WHERE `SCH_NAME` LIKE '%corrections%';
+DELETE FROM scraped_school_emails WHERE `SCRAPED_WEBSITE` LIKE '%correctional%';
 DELETE FROM scraped_school_emails WHERE `SCRAPED_WEBSITE` LIKE '%usnews%';
 DELETE FROM scraped_school_emails WHERE `SCRAPED_WEBSITE` LIKE '%valleymls%';
 DELETE FROM scraped_school_emails WHERE `SCRAPED_WEBSITE` LIKE '%trulia%';
