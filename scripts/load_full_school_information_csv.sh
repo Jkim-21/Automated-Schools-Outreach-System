@@ -1,0 +1,18 @@
+#!/bin/bash
+
+read -r -p "Enter the directory path to your data: " DIR_PATH
+read -r -p "Enter the database name: " DATABASE_NAME
+read -r -p "Enter your MySQL username: " SQL_USERNAME
+
+read -r -s -p "ENTER your MySQL password: " SQL_PASSWORD
+
+mysql --local-infile=1 -u "$SQL_USERNAME" -p"$SQL_PASSWORD" -e\
+"USE ${DATABASE_NAME};
+LOAD DATA LOCAL INFILE '${DIR_PATH}'
+INTO TABLE full_school_information
+FIELDS TERMINATED BY ','
+ENCLOSED BY '\"'
+LINES TERMINATED BY '\n'
+IGNORE 1 LINES
+(INDEX_NUMBER,STATENAME,SCH_NAME,ST_SCHID,NCESSCH,MSTREET1,MCITY,MSTATE,MZIP,LSTREET1,LCITY,LSTATE,LZIP,PHONE,WEBSITE,SY_STATUS_TEXT,UPDATED_STATUS_TEXT,SCH_TYPE_TEXT,LEVEL,LAT,LON,CBSA,NMCBSA,CSA,NMCSA);
+"

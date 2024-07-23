@@ -11,10 +11,10 @@ class email_scraper(scrapy.Spider):
     def __init__(self, max_depth=2, *args, **kwargs):
         super().__init__(*args, **kwargs)
         
-        self.dataset_protocol = 'setEmails'
-        self.dataset = 'scraped_school_emails'
-        self.id_floor = 1
-        self.id_ceiling = 1
+        self.dataset_protocol = 'setEmailsTest'
+        self.dataset = 'scraped_school_emails_backup'
+        self.id_floor = 40820
+        self.id_ceiling = 41220
         
         self.start_urls = self.read_urls()
 
@@ -23,7 +23,7 @@ class email_scraper(scrapy.Spider):
         
         self.key_websites = ['directory','activities','music','handbook','administration','faculty','staff','contact','about','departments','art','band','orchestra','fine-arts','instrument','performing-arts','performance']
         self.keywords = ['admin@','music@','band@','choir@','@orchestra','art@','arts@','deansoffice@','dean@','principal@', 'schooloffice@']
-        self.blacklist_keywords = ['news','archive','transport','sports','publication','javascript','tel','forum','calendar','alumni','student','gallery','blog','shop','store','donate','donations','careers','recruitment','event','merch', 'mailto:', 'javascript:', 'tel:']
+        self.blacklist_keywords = ['news','archive','transport','sports','publication', 'announcement', 'javascript','tel','forum','calendar','alumni','student','gallery','blog','shop','store','donate','donations','careers','recruitment','event','merch', 'mailto:', 'javascript:', 'tel:']
         self.blacklist_start_keywords = ['news','archive','transport','sports','publication','javascript','tel','forum','calendar','alumni','student','gallery','blog','shop','store','domate','donations','careers','recruitment','event','merch', 'mailto:', '#']
         self.excluded_extensions = ['.pdf', '.doc', '.docx', '.jpg', '.jpeg', '.png', '.gif', '.bmp', '.tiff', '.pptx', '.ppt', '.webm']
         
@@ -61,7 +61,10 @@ class email_scraper(scrapy.Spider):
             self.logger.warning(f"Skipping non-text response: {current_url}")
             return        
 
-        if (current_url in self.start_urls and current_depth != 0) or current_depth > self.max_depth:
+        if (
+            (current_url in self.start_urls and current_depth != 0) or current_depth > self.max_depth or
+            (any(start_url in current_url for start_url in self.start_urls)  and base_url not in current_url)
+        ):
             return
         
         if len(self.visited_urls) > self.MAX_VISITED_URLS:

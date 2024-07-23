@@ -10,6 +10,9 @@ SET `WEBSITE` = CASE
     ELSE WEBSITE
 END;
 
+ALTER TABLE scraped_school_emails
+ADD SCH_TYPE_TEXT TEXT;
+
 DROP TABLE IF EXISTS scraped_school_emails_backup;
 CREATE TABLE scraped_school_emails_backup LIKE scraped_school_emails;
 INSERT INTO scraped_school_emails_backup SELECT * from scraped_school_emails;
