@@ -205,6 +205,26 @@ DELETE FROM scraped_school_emails WHERE `SCRAPED_WEBSITE` LIKE "https://www.tri-
 
 -- Illinois 29211 - 29611 (400)
 
+DELETE FROM scraped_school_emails WHERE `SCRAPED_WEBSITE` LIKE "https://www.illinoisreportcard.com/School.aspx?schoolid=130410060042001";
+DELETE FROM scraped_school_emails WHERE `SCRAPED_WEBSITE` LIKE "https://www.illinoisreportcard.com/School.aspx?schoolid=410570090262022";
+DELETE FROM scraped_school_emails WHERE `SCH_NAME` LIKE "Bond County CUSD 2 ECC";
+DELETE FROM scraped_school_emails WHERE `SCH_NAME` LIKE "Wanda Kendall Elem School";
+DELETE FROM scraped_school_emails WHERE `SCRAPED_WEBSITE` LIKE "https://www.ksd111.org/Page/353";
+DELETE FROM scraped_school_emails WHERE `SCRAPED_WEBSITE` LIKE "https://www.ksd111.org/domain/217";
+
+-- Illinois 29612 - 30012 (400)
+
+DELETE FROM scraped_school_emails WHERE `SCRAPED_WEBSITE` LIKE "https://www.kcud229.org/lyle";
+DELETE FROM scraped_school_emails WHERE `SCRAPED_WEBSITE` LIKE "https://www.lamoilleschools.org/";
+DELETE FROM scraped_school_emails WHERE `SCRAPED_WEBSITE` LIKE "https://www.lamoilleschools.org/allen-grade-school/";
+DELETE FROM scraped_school_emails WHERE `SCH_NAME` LIKE "%Prekindergarten%";
+DELETE FROM scraped_school_emails WHERE `SCH_NAME` LIKE "%kindergarten%";
+DELETE FROM scraped_school_emails WHERE `SCRAPED_WEBSITE` LIKE "https://www.illinoisreportcard.com/School.aspx?schoolid=500821880220001";
+
+
+-- Illinois 30919 - 31319 (400)
+
+DELETE FROM scraped_school_emails WHERE `SCRAPED_WEBSITE` LIKE "";
 DELETE FROM scraped_school_emails WHERE `SCRAPED_WEBSITE` LIKE "";
 DELETE FROM scraped_school_emails WHERE `SCRAPED_WEBSITE` LIKE "";
 DELETE FROM scraped_school_emails WHERE `SCRAPED_WEBSITE` LIKE "";
