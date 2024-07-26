@@ -488,30 +488,356 @@ UPDATE scraped_school_emails SET `SCRAPED_WEBSITE` = 'https://www.meridian101.co
 
 UPDATE scraped_school_emails SET `SCRAPED_WEBSITE` = 'https://www.mtoliveschools.org/work-1/project-one-dlwkj' WHERE `SCRAPED_WEBSITE` = 'https://www.mtoliveschools.org/'
 
-UPDATE scraped_school_emails SET `SCRAPED_WEBSITE` = '' WHERE `SCRAPED_WEBSITE` = ''
+-- Illinois (30013 - 30416)
 
-UPDATE scraped_school_emails SET `SCRAPED_WEBSITE` = '' WHERE `SCRAPED_WEBSITE` = ''
+UPDATE scraped_school_emails SET `SCRAPED_WEBSITE` = 'https://www.bchornets.com/vnews/display.v/StaffDirectory?sd=601df4a224121' WHERE `SCRAPED_WEBSITE` = 'https://www.bchornets.com/'
 
-UPDATE scraped_school_emails SET `SCRAPED_WEBSITE` = '' WHERE `SCRAPED_WEBSITE` = ''
+UPDATE scraped_school_emails SET `SCRAPED_WEBSITE` = 'https://www.bchornets.com/vnews/display.v/StaffDirectory?sd=601dfd8fc5a2d' WHERE `SCRAPED_WEBSITE` = 'https://www.bchornets.com/vnews/display.v/SEC/Brown County Elementary School'
 
-UPDATE scraped_school_emails SET `SCRAPED_WEBSITE` = '' WHERE `SCRAPED_WEBSITE` = ''
+UPDATE scraped_school_emails SET `SCRAPED_WEBSITE` = 'https://www.bchornets.com/vnews/display.v/StaffDirectory?sd=601df9fa320bf' WHERE `SCRAPED_WEBSITE` = 'https://www.bchornets.com/vnews/display.v/SEC/Brown County Middle School'
 
-UPDATE scraped_school_emails SET `SCRAPED_WEBSITE` = '' WHERE `SCRAPED_WEBSITE` = ''
+UPDATE scraped_school_emails SET `SCRAPED_WEBSITE` = 'https://osborne.mtv80.org/' WHERE `SCRAPED_WEBSITE` = 'https://sites.google.com/mtv80.org/osborne/'
 
-UPDATE scraped_school_emails SET `SCRAPED_WEBSITE` = '' WHERE `SCRAPED_WEBSITE` = ''
+UPDATE scraped_school_emails SET `SCRAPED_WEBSITE` = 'https://www.mgschools.com/staff?filter_ids=150984' WHERE `SCRAPED_WEBSITE` = 'https://www.mgschools.com/'
 
-UPDATE scraped_school_emails SET `SCRAPED_WEBSITE` = '' WHERE `SCRAPED_WEBSITE` = ''
+UPDATE scraped_school_emails SET `SCRAPED_WEBSITE` = 'https://www.nauvoo-colusa.com/staff' WHERE `SCRAPED_WEBSITE` = 'https://www.nauvoo-colusa.com/'
 
-UPDATE scraped_school_emails SET `SCRAPED_WEBSITE` = '' WHERE `SCRAPED_WEBSITE` = ''
+UPDATE scraped_school_emails SET `SCRAPED_WEBSITE` = 'https://www.nettlecreek.org/staff' WHERE `SCRAPED_WEBSITE` = 'https://www.nettlecreek.org/'
 
-UPDATE scraped_school_emails SET `SCRAPED_WEBSITE` = '' WHERE `SCRAPED_WEBSITE` = ''
+UPDATE scraped_school_emails SET `SCRAPED_WEBSITE` = 'https://www.na60.org/high-school' WHERE `SCRAPED_WEBSITE` = 'https://www.na60.org/'
 
-UPDATE scraped_school_emails SET `SCRAPED_WEBSITE` = '' WHERE `SCRAPED_WEBSITE` = ''
+UPDATE scraped_school_emails SET `SCRAPED_WEBSITE` = 'https://www.newsimpsonhill.com/District/1147-Staff-Directory.html' WHERE `SCRAPED_WEBSITE` = 'https://www.newsimpsonhill.com/'
 
-UPDATE scraped_school_emails SET `SCRAPED_WEBSITE` = '' WHERE `SCRAPED_WEBSITE` = ''
+UPDATE scraped_school_emails SET `SCRAPED_WEBSITE` = 'https://www.newtrier.k12.il.us/directory' WHERE `SCRAPED_WEBSITE` = 'https://www.newtrier.k12.il.us/'
 
-UPDATE scraped_school_emails SET `SCRAPED_WEBSITE` = '' WHERE `SCRAPED_WEBSITE` = ''
+UPDATE scraped_school_emails SET `SCRAPED_WEBSITE` = 'https://www.niles71.org/administration' WHERE `SCRAPED_WEBSITE` = 'https://www.niles71.org/'
 
-UPDATE scraped_school_emails SET `SCRAPED_WEBSITE` = '' WHERE `SCRAPED_WEBSITE` = ''
+UPDATE scraped_school_emails SET `SCRAPED_WEBSITE` = 'https://www.nokomis.k12.il.us/page/contact-information' WHERE `SCRAPED_WEBSITE` = 'https://www.nokomis.k12.il.us/'
 
-UPDATE scraped_school_emails SET `SCRAPED_WEBSITE` = '' WHERE `SCRAPED_WEBSITE` = ''
+UPDATE scraped_school_emails SET `SCRAPED_WEBSITE` = 'https://www.nokomis.k12.il.us/page/north-contacts' WHERE `SCRAPED_WEBSITE` = 'https://www.nokomis.k12.il.us/page/north-elementary'
+
+UPDATE scraped_school_emails SET `SCRAPED_WEBSITE` = 'https://normalwest.unit5.org/' WHERE `SCRAPED_WEBSITE` = 'https://ncwhsathletics.com/'
+
+UPDATE scraped_school_emails SET `SCRAPED_WEBSITE` = 'https://oakdale.unit5.org/' WHERE `SCRAPED_WEBSITE` = 'https://www.illinoisreportcard.com/School.aspx?schoolid=170640050262010'
+
+UPDATE scraped_school_emails SET `SCRAPED_WEBSITE` = 'https://towanda.unit5.org/' WHERE `SCRAPED_WEBSITE` = 'https://towanda.unit5.org/parents/parent-information/contact-us'
+
+UPDATE scraped_school_emails SET `SCRAPED_WEBSITE` = 'https://il01905100.schoolwires.net/domain/1634' WHERE `SCRAPED_WEBSITE` = 'https://il01905100.schoolwires.net/domain/731'
+
+UPDATE scraped_school_emails SET `SCRAPED_WEBSITE` = 'https://sites.google.com/northclayschools.com/nccusd25/high-school/faculty?authuser=0' WHERE `SCRAPED_WEBSITE` = 'https://northclaysports.com/'
+
+UPDATE scraped_school_emails SET `SCRAPED_WEBSITE` = 'https://sites.google.com/northclayschools.com/nccusd25/jr-high/faculty?authuser=0' WHERE `SCRAPED_WEBSITE` = 'https://sites.google.com/northclayschools.com/nccusd25'
+
+UPDATE scraped_school_emails SET `SCRAPED_WEBSITE` = 'https://www.norwood63.org/staff?filter_ids=101440' WHERE `SCRAPED_WEBSITE` = 'https://www.norwood63.org/'
+
+UPDATE scraped_school_emails SET `SCRAPED_WEBSITE` = 'https://oakgroveil.sites.thrillshare.com/staff' WHERE `SCRAPED_WEBSITE` = 'https://www.og68.org/'
+
+UPDATE scraped_school_emails SET `SCRAPED_WEBSITE` = 'https://www.oprfhs.org/' WHERE `SCRAPED_WEBSITE` = 'https://www.oak-park.us/'
+
+UPDATE scraped_school_emails SET `SCRAPED_WEBSITE` = 'https://www.oakland5.org/vnews/display.v/SEC/Lake%20Crest%20Elementary%7CStaff%20Pages' WHERE `SCRAPED_WEBSITE` = 'https://www.oakland5.org/vnews/display.v/SEC/Lake Crest Elementary'
+
+UPDATE scraped_school_emails SET `SCRAPED_WEBSITE` = 'https://www.oakland5.org/vnews/display.v/SEC/Lake Crest Elementary' WHERE `SCRAPED_WEBSITE` = 'https://www.oakland5.org/'
+
+UPDATE scraped_school_emails SET `SCRAPED_WEBSITE` = 'https://www.oblongschools.net/staff?filter_ids=218813' WHERE `SCRAPED_WEBSITE` = 'https://www.oblongschools.net/'
+
+UPDATE scraped_school_emails SET `SCRAPED_WEBSITE` = 'https://www.rowva.k12.il.us/staff?filter_ids=49480' WHERE `SCRAPED_WEBSITE` = 'https://www.rowva.k12.il.us/'
+
+UPDATE scraped_school_emails SET `SCRAPED_WEBSITE` = 'https://www.orangevillecusd.com/staff?filter_ids=56536' WHERE `SCRAPED_WEBSITE` = 'https://www.orangevillecusd.com/'
+
+UPDATE scraped_school_emails SET `SCRAPED_WEBSITE` = 'https://www.ottawahigh.com/staff' WHERE `SCRAPED_WEBSITE` = 'https://www.ottawahigh.com/'
+
+UPDATE scraped_school_emails SET `SCRAPED_WEBSITE` = 'https://www.palestinecusd3.net/pgs' WHERE `SCRAPED_WEBSITE` = 'https://www.palestinecusd3.net/'
+
+UPDATE scraped_school_emails SET `SCRAPED_WEBSITE` = 'https://www.northwestern.k12.il.us/vnews/display.v/SEC/Jr%20Sr%20High%20School%7CStaff%20Directory' WHERE `SCRAPED_WEBSITE` = 'https://www.northwestern.k12.il.us/'
+
+UPDATE scraped_school_emails SET `SCRAPED_WEBSITE` = 'https://www.northwestern.k12.il.us/vnews/display.v/SEC/Elementary%7CStaff%20Directory' WHERE `SCRAPED_WEBSITE` = 'https://www.northwestern.k12.il.us/vnews/display.v/SEC/Board of Education'
+
+UPDATE scraped_school_emails SET `SCRAPED_WEBSITE` = 'https://www.panaschools.com/page/pes-info-and-staff' WHERE `SCRAPED_WEBSITE` = 'https://www.panaschools.com/'
+
+UPDATE scraped_school_emails SET `SCRAPED_WEBSITE` = 'https://pcusd100.sharpschool.net/cms/one.aspx?portalId=3136102&pageId=5539147' WHERE `SCRAPED_WEBSITE` = 'https://pcusd100.sharpschool.net/'
+
+UPDATE scraped_school_emails SET `SCRAPED_WEBSITE` = 'https://www.pawneeschools.com/vnews/display.v/SEC/Junior%20High%7CStaff%20Directory' WHERE `SCRAPED_WEBSITE` = 'https://www.pawneeschools.com/'
+
+UPDATE scraped_school_emails SET `SCRAPED_WEBSITE` = 'https://www.cusd1.org/District/Department/293-Payson-Seymour-Elementary' WHERE `SCRAPED_WEBSITE` = 'https://www.cusd1.org/'
+
+UPDATE scraped_school_emails SET `SCRAPED_WEBSITE` = 'https://jrsrhigh.pcwolves.net/staff_directory' WHERE `SCRAPED_WEBSITE` = 'http://www.pcwolves.net/'
+
+UPDATE scraped_school_emails SET `SCRAPED_WEBSITE` = 'https://www.pecschools.com/staff?filter_ids=25202' WHERE `SCRAPED_WEBSITE` = 'https://www.pecschools.com/'
+
+UPDATE scraped_school_emails SET `SCRAPED_WEBSITE` = 'https://www.pekinhigh.net/staff' WHERE `SCRAPED_WEBSITE` = 'https://www.pekinhigh.net/'
+
+UPDATE scraped_school_emails SET `SCRAPED_WEBSITE` = 'https://www.psd259.org/staff?filter_ids=90834' WHERE `SCRAPED_WEBSITE` = 'https://www.psd259.org/'
+
+UPDATE scraped_school_emails SET `SCRAPED_WEBSITE` = 'https://www.pennoyerschool.org/' WHERE `SCRAPED_WEBSITE` = 'https://www.pennoyerschool.org/about/people'
+
+UPDATE scraped_school_emails SET `SCRAPED_WEBSITE` = 'https://www.peoriapublicschools.org/o/wctc' WHERE `SCRAPED_WEBSITE` = 'https://woodruffsawyer.com/about-us/careers'
+
+UPDATE scraped_school_emails SET `SCRAPED_WEBSITE` = 'https://www.ph325.org/o/peoria-heights/staff?filter_id=96990&filter_ids=96990' WHERE `SCRAPED_WEBSITE` = 'https://www.ph325.org/'
+
+UPDATE scraped_school_emails SET `SCRAPED_WEBSITE` = 'https://www.porta202.org/directory7a2135d6' WHERE `SCRAPED_WEBSITE` = 'https://www.porta202.org/'
+
+UPDATE scraped_school_emails SET `SCRAPED_WEBSITE` = 'https://www.piasabirds.net/schools/medora/index' WHERE `SCRAPED_WEBSITE` = 'https://www.illinoisreportcard.com/School.aspx?schoolid=400560090262004'
+
+UPDATE scraped_school_emails SET `SCRAPED_WEBSITE` = 'https://www.piasabirds.net/schools/shipman/people' WHERE `SCRAPED_WEBSITE` = 'https://www.illinoisreportcard.com/School.aspx?schoolid=400560090262005'
+
+-- Illinois 30417 - 30717 (400)
+
+UPDATE scraped_school_emails SET `SCRAPED_WEBSITE` = 'https://www.phill69.com/staff?filter_ids=455674' WHERE `SCRAPED_WEBSITE` = 'https://www.phill69.com/'
+
+UPDATE scraped_school_emails SET `SCRAPED_WEBSITE` = 'https://www.phwolves.com/vnews/display.v/SEC/Elementary%7CElementary%20Faculty%20%26%20Staff%20Pages' WHERE `SCRAPED_WEBSITE` = 'https://www.phwolves.com/'
+
+UPDATE scraped_school_emails SET `SCRAPED_WEBSITE` = 'https://sites.google.com/a/ppcusd8.org/pphs/' WHERE `SCRAPED_WEBSITE` = 'https://www.ppcusd8.org/'
+
+UPDATE scraped_school_emails SET `SCRAPED_WEBSITE` = 'https://www.pv62.com/primary-school-teachers.html' WHERE `SCRAPED_WEBSITE` = 'https://www.pv62.com/'
+
+UPDATE scraped_school_emails SET `SCRAPED_WEBSITE` = 'https://www.potomac.k12.il.us/staff?filter_ids=65057' WHERE `SCRAPED_WEBSITE` = 'https://www.potomac.k12.il.us/'
+
+UPDATE scraped_school_emails SET `SCRAPED_WEBSITE` = 'https://www.d107.org/32006_3' WHERE `SCRAPED_WEBSITE` = 'https://www.d107.org/'
+
+UPDATE scraped_school_emails SET `SCRAPED_WEBSITE` = 'https://home.poloschools.net/staff?filter_id=106168&filter_ids=106168' WHERE `SCRAPED_WEBSITE` = 'https://home.poloschools.net/'
+
+UPDATE scraped_school_emails SET `SCRAPED_WEBSITE` = 'https://www.pwh105.org/staff' WHERE `SCRAPED_WEBSITE` = 'https://www.pwh105.org/'
+
+UPDATE scraped_school_emails SET `SCRAPED_WEBSITE` = 'https://www.pontiac90.org/contact/high_school_office' WHERE `SCRAPED_WEBSITE` = 'https://www.pontiac90.org/'
+
+UPDATE scraped_school_emails SET `SCRAPED_WEBSITE` = 'https://www.dist46.org/staff?filter_ids=27651' WHERE `SCRAPED_WEBSITE` = 'https://www.dist46.org/'
+
+UPDATE scraped_school_emails SET `SCRAPED_WEBSITE` = 'https://www.prairiehill.org/prairie-hill/phs-staff' WHERE `SCRAPED_WEBSITE` = 'https://www.prairiehill.org/'
+
+UPDATE scraped_school_emails SET `SCRAPED_WEBSITE` = 'https://www.prairiehill.org/willowbrook_1/wms-staff' WHERE `SCRAPED_WEBSITE` = 'https://www.prairiehill.org/willowbrook_1'
+
+UPDATE scraped_school_emails SET `SCRAPED_WEBSITE` = 'https://www.d125.org/about' WHERE `SCRAPED_WEBSITE` = 'https://www.d125.org/'
+
+UPDATE scraped_school_emails SET `SCRAPED_WEBSITE` = 'https://sites.google.com/princeville326.net/pgs/home' WHERE `SCRAPED_WEBSITE` = 'https://sites.google.com/princeville326.net/pcusd326/home'
+
+UPDATE scraped_school_emails SET `SCRAPED_WEBSITE` = 'https://www.plt3.org/o/sixtwelve/staff?filter_ids=275940' WHERE `SCRAPED_WEBSITE` = 'https://www.plt3.org/'
+
+UPDATE scraped_school_emails SET `SCRAPED_WEBSITE` = 'https://www.pcschools535.org/page/pcjh-contact-and-staff-pcjh' WHERE `SCRAPED_WEBSITE` = 'https://www.pcschools535.org/'
+
+UPDATE scraped_school_emails SET `SCRAPED_WEBSITE` = 'https://www.qps.org/employee/search-results/?searchvar=BALDWIN&engine=location' WHERE `SCRAPED_WEBSITE` = 'https://www.qps.org/schools/baldwin/'
+
+UPDATE scraped_school_emails SET `SCRAPED_WEBSITE` = 'https://www.qps.org/employee/search-results/?searchvar=SENIOR+HIGH&engine=location' WHERE `SCRAPED_WEBSITE` = 'https://www.qps.org/schools/qhs/'
+
+UPDATE scraped_school_emails SET `SCRAPED_WEBSITE` = 'https://www.qps.org/employee/search-results/?searchvar=QJHS&engine=location' WHERE `SCRAPED_WEBSITE` = 'https://www.qps.org/schools/qjhs/'
+
+UPDATE scraped_school_emails SET `SCRAPED_WEBSITE` = 'https://www.qps.org/employee/search-results/?searchvar=DENMAN&engine=location' WHERE `SCRAPED_WEBSITE` = 'https://www.qps.org/schools/denman/'
+
+UPDATE scraped_school_emails SET `SCRAPED_WEBSITE` = 'https://www.qps.org/employee/search-results/?searchvar=ILES&engine=location' WHERE `SCRAPED_WEBSITE` = 'https://www.qps.org/schools/iles/about-iles/'
+
+UPDATE scraped_school_emails SET `SCRAPED_WEBSITE` = 'https://www.qps.org/employee/search-results/?searchvar=LINCOLN+DOUGLAS&engine=location' WHERE `SCRAPED_WEBSITE` = 'https://www.qps.org/schools/lincoln-douglas/'
+
+UPDATE scraped_school_emails SET `SCRAPED_WEBSITE` = 'https://www.qps.org/employee/search-results/?searchvar=ROONEY&engine=location' WHERE `SCRAPED_WEBSITE` = 'https://www.qps.org/schools/rooney/about-rooney/'
+
+UPDATE scraped_school_emails SET `SCRAPED_WEBSITE` = 'https://www.ramsey.fayette.k12.il.us/staff' WHERE `SCRAPED_WEBSITE` = 'https://www.ramsey.fayette.k12.il.us/'
+
+UPDATE scraped_school_emails SET `SCRAPED_WEBSITE` = 'https://www.rankin98.org/vnews/display.v/SEC/Classrooms' WHERE `SCRAPED_WEBSITE` = 'https://www.rankin98.org/'
+
+UPDATE scraped_school_emails SET `SCRAPED_WEBSITE` = 'https://www.rich227.org/staff?filter_ids=192921' WHERE `SCRAPED_WEBSITE` = 'https://www.rich227.org/'
+
+UPDATE scraped_school_emails SET `SCRAPED_WEBSITE` = 'https://www.d88a.org//site/default.aspx?PageType=2&PageModuleInstanceID=146&ViewID=d23c305b-e295-4186-9257-b05a61f233d9&RenderLoc=0&FlexDataID=0&Filter=Site%3AElementary' WHERE `SCRAPED_WEBSITE` = 'https://www.d88a.org/'
+
+UPDATE scraped_school_emails SET `SCRAPED_WEBSITE` = 'https://www.riley18.org/staff' WHERE `SCRAPED_WEBSITE` = 'https://www.riley18.org/'
+
+UPDATE scraped_school_emails SET `SCRAPED_WEBSITE` = 'https://www.rivergroveschool.org/domain/1039' WHERE `SCRAPED_WEBSITE` = 'https://www.rivergroveschool.org/'
+
+UPDATE scraped_school_emails SET `SCRAPED_WEBSITE` = 'https://www.rb60.com/staff?filter_ids=142808' WHERE `SCRAPED_WEBSITE` = 'https://www.rb60.com/'
+
+UPDATE scraped_school_emails SET `SCRAPED_WEBSITE` = 'https://www.robinsonschools.com/unit2/index.php/schools/lgs/lgs-staff' WHERE `SCRAPED_WEBSITE` = 'https://www.robinsonschools.com/'
+
+UPDATE scraped_school_emails SET `SCRAPED_WEBSITE` = 'https://www.rochelleschools.org/o/rths' WHERE `SCRAPED_WEBSITE` = 'https://www.rthsd212.org/'
+
+UPDATE scraped_school_emails SET `SCRAPED_WEBSITE` = 'http://rfsd13.org/index.php/our-district/schools/rfms' WHERE `SCRAPED_WEBSITE` = 'http://rfsd13.org/index.php/component/dpcalendar/location?view=location&id=2'
+
+UPDATE scraped_school_emails SET `SCRAPED_WEBSITE` = 'https://www.rimsd41.org/apps/pages/index.jsp?uREC_ID=1180467&type=d&pREC_ID=staff' WHERE `SCRAPED_WEBSITE` = 'https://www.rimsd41.org/apps/pages/FrancesWillard'
+
+UPDATE scraped_school_emails SET `SCRAPED_WEBSITE` = 'https://www.rimsd41.org/apps/pages/index.jsp?uREC_ID=1180201&type=d&pREC_ID=staff' WHERE `SCRAPED_WEBSITE` = 'https://www.illinoisreportcard.com/School.aspx?schoolid=490810410252015'
+
+UPDATE scraped_school_emails SET `SCRAPED_WEBSITE` = 'https://www.rimsd41.org/apps/pages/index.jsp?uREC_ID=1180470&type=d&pREC_ID=staff' WHERE `SCRAPED_WEBSITE` = 'https://ridgewood.rimsd41.org/'
+
+UPDATE scraped_school_emails SET `SCRAPED_WEBSITE` = 'https://www.rimsd41.org/apps/pages/index.jsp?uREC_ID=1180475&type=d&pREC_ID=staff' WHERE `SCRAPED_WEBSITE` = 'https://www.rimsd41.org/apps/pages/TMLC'
+
+UPDATE scraped_school_emails SET `SCRAPED_WEBSITE` = 'https://www.rimsd41.org/apps/pages/index.jsp?uREC_ID=1180471&type=d&pREC_ID=staff' WHERE `SCRAPED_WEBSITE` = 'https://www.rimsd41.org/apps/pages/academy'
+
+UPDATE scraped_school_emails SET `SCRAPED_WEBSITE` = 'https://www.rimsd41.org/apps/pages/index.jsp?uREC_ID=1180472&type=d&pREC_ID=staff' WHERE `SCRAPED_WEBSITE` = 'https://www.rimsd41.org/apps/pages/RICMS'
+
+UPDATE scraped_school_emails SET `SCRAPED_WEBSITE` = 'https://www.rockdale.will.k12.il.us/staff' WHERE `SCRAPED_WEBSITE` = 'https://www.rockdale.will.k12.il.us/'
+
+UPDATE scraped_school_emails SET `SCRAPED_WEBSITE` = 'https://roosevelt.rps205.com/' WHERE `SCRAPED_WEBSITE` = 'https://roosevelt.rps205.com/contact-us'
+
+UPDATE scraped_school_emails SET `SCRAPED_WEBSITE` = 'https://www.rockton140.org/site/RgStaff' WHERE `SCRAPED_WEBSITE` = 'https://www.rockton140.org/'
+
+UPDATE scraped_school_emails SET `SCRAPED_WEBSITE` = 'https://www.rondout.org/staff?page_no=2' WHERE `SCRAPED_WEBSITE` = 'https://www.rondout.org/'
+
+UPDATE scraped_school_emails SET `SCRAPED_WEBSITE` = 'https://www.rosemont78.org/staff' WHERE `SCRAPED_WEBSITE` = 'https://www.rosemont78.org/'
+
+UPDATE scraped_school_emails SET `SCRAPED_WEBSITE` = 'https://ih.rlas-116.org/' WHERE `SCRAPED_WEBSITE` = 'https://www.rlas-116.org/about-us/contact-us'
+
+UPDATE scraped_school_emails SET `SCRAPED_WEBSITE` = 'https://rlms.rlas-116.org/' WHERE `SCRAPED_WEBSITE` = 'https://www.rlas-116.org/'
+
+UPDATE scraped_school_emails SET `SCRAPED_WEBSITE` = 'https://ellis.rlas-116.org/' WHERE `SCRAPED_WEBSITE` = 'https://www.rlas-116.org/about-us'
+
+UPDATE scraped_school_emails SET `SCRAPED_WEBSITE` = 'https://www.salem111.com/directory.html?type=hawthorn' WHERE `SCRAPED_WEBSITE` = 'https://hawthorn.salem111.com/'
+
+UPDATE scraped_school_emails SET `SCRAPED_WEBSITE` = 'https://www.sandoval501.org/staff?filter_ids=118844,118877' WHERE `SCRAPED_WEBSITE` = 'https://www.sandoval501.org/page/jr-sr-high-school'
+
+UPDATE scraped_school_emails SET `SCRAPED_WEBSITE` = 'https://www.sandoval501.org/staff?filter_ids=118844,118846' WHERE `SCRAPED_WEBSITE` = 'https://www.sandoval501.org/'
+
+UPDATE scraped_school_emails SET `SCRAPED_WEBSITE` = 'https://www.sandridgesd172.net/district-information/staff-directory/staff-directory' WHERE `SCRAPED_WEBSITE` = 'https://www.sandridgesd172.net/'
+
+-- Illinois 30718 - 30918
+
+UPDATE scraped_school_emails SET `SCRAPED_WEBSITE` = 'https://www.sd60c.org/faculty-and-staff' WHERE `SCRAPED_WEBSITE` = 'https://www.sd60c.org/'
+
+UPDATE scraped_school_emails SET `SCRAPED_WEBSITE` = 'https://www.scalesmound.net/staff?filter_ids=443462' WHERE `SCRAPED_WEBSITE` = 'https://www.scalesmound.net/'
+
+UPDATE scraped_school_emails SET `SCRAPED_WEBSITE` = 'https://www.sd81.org/lincoln/staff-directory' WHERE `SCRAPED_WEBSITE` = 'https://www.sd81.org/lincoln/contact'
+
+UPDATE scraped_school_emails SET `SCRAPED_WEBSITE` = 'https://www.sd81.org/kennedy/staff-directory' WHERE `SCRAPED_WEBSITE` = 'https://www.sd81.org/kennedy/parent-information'
+
+UPDATE scraped_school_emails SET `SCRAPED_WEBSITE` = 'https://www.sd81.org/washington' WHERE SCRAPED_WEBSITE = 'https://www.sd81.org/'
+
+UPDATE scraped_school_emails SET `SCRAPED_WEBSITE` = 'https://www.selmaville.com/staff' WHERE `SCRAPED_WEBSITE` = 'https://www.selmaville.com/'
+
+UPDATE scraped_school_emails SET `SCRAPED_WEBSITE` = 'https://www.sv196.org/school_information/high_school' WHERE `SCRAPED_WEBSITE` = 'https://www.sv196.org/'
+
+UPDATE scraped_school_emails SET `SCRAPED_WEBSITE` = 'https://www.shelbyville.k12.il.us/page/administration1' WHERE `SCRAPED_WEBSITE` = 'https://www.illinoisreportcard.com/School.aspx?schoolid=110870040262003'
+
+UPDATE scraped_school_emails SET `SCRAPED_WEBSITE` = 'https://www.shelbyville.k12.il.us/page/administration' WHERE `SCRAPED_WEBSITE` = 'https://www.shelbyville.k12.il.us/'
+
+UPDATE scraped_school_emails SET `SCRAPED_WEBSITE` = 'https://www.shi85.org/staff?filter_ids=183417' WHERE `SCRAPED_WEBSITE` = 'https://www.shi85.org/'
+
+UPDATE scraped_school_emails SET `SCRAPED_WEBSITE` = 'https://www.signalhill181.org/staff?filter_ids=436234' WHERE `SCRAPED_WEBSITE` = 'https://www.signalhill181.org/'
+
+UPDATE scraped_school_emails SET `SCRAPED_WEBSITE` = 'https://www.silvisrockets.com/staff?filter_ids=315788' WHERE `SCRAPED_WEBSITE` = 'https://www.silvisrockets.com/page/about-nejh/'
+
+UPDATE scraped_school_emails SET `SCRAPED_WEBSITE` = 'https://www.somonauk.net/o/somonauk-high-school' WHERE `SCRAPED_WEBSITE` = 'https://www.somonauk.net/'
+
+UPDATE scraped_school_emails SET `SCRAPED_WEBSITE` = 'https://www.southforkschools.com/vnews/display.v/SEC/Schools%7CJunior%20High%20Info%3E%3EDirectory' WHERE `SCRAPED_WEBSITE` = 'https://www.southforkschools.com/'
+
+UPDATE scraped_school_emails SET `SCRAPED_WEBSITE` = 'https://www.spgs.net/vnews/display.v/SEC/Staff%7CStaff%20Directory' WHERE `SCRAPED_WEBSITE` = 'https://www.spgs.net/'
+
+UPDATE scraped_school_emails SET `SCRAPED_WEBSITE` = 'https://www.spoonrivervalley.us/staff?filter_ids=249389,249388,249392' WHERE `SCRAPED_WEBSITE` = 'https://www.spoonrivervalley.us/'
+
+UPDATE scraped_school_emails SET `SCRAPED_WEBSITE` = 'https://www.stanne24.org/o/sags' WHERE `SCRAPED_WEBSITE` = 'https://www.sags256.org/'
+
+UPDATE scraped_school_emails SET `SCRAPED_WEBSITE` = 'https://www.stanne24.org/o/sachs' WHERE `SCRAPED_WEBSITE` = 'https://www.sachs302.org/'
+
+UPDATE scraped_school_emails SET `SCRAPED_WEBSITE` = 'https://davis.d303.org/' WHERE `SCRAPED_WEBSITE` = 'https://dav-ric.d303.org/'
+
+UPDATE scraped_school_emails SET `SCRAPED_WEBSITE` = 'https://richmond.d303.org/' WHERE `SCRAPED_WEBSITE` = 'https://dav-ric.d303.org/about-richmond'
+
+UPDATE scraped_school_emails SET `SCRAPED_WEBSITE` = 'https://www.stelmo.org/staff?filter_ids=38602' WHERE `SCRAPED_WEBSITE` = 'https://www.stelmo.org/'
+
+UPDATE scraped_school_emails SET `SCRAPED_WEBSITE` = 'https://www.stelmo.org/staff?filter_ids=38606' WHERE `SCRAPED_WEBSITE` = 'https://www.stelmo.org/page/contact-school'
+
+UPDATE scraped_school_emails SET `SCRAPED_WEBSITE` = 'https://www.sg258.org/staff' WHERE `SCRAPED_WEBSITE` = 'https://www.sg258.org/'
+
+UPDATE scraped_school_emails SET `SCRAPED_WEBSITE` = 'https://www.stjoe.k12.il.us/grade-school' WHERE `SCRAPED_WEBSITE` = 'https://www.stjoe.k12.il.us/'
+
+UPDATE scraped_school_emails SET `SCRAPED_WEBSITE` = 'https://sites.google.com/strosedistrict14-15.com/bandmusic' WHERE `SCRAPED_WEBSITE` = 'https://sites.google.com/strosedistrict14-15.com/srs'
+
+UPDATE scraped_school_emails SET `SCRAPED_WEBSITE` = 'https://www.steeleville138.org/gradeschool/index.html' WHERE `SCRAPED_WEBSITE` = 'https://www.steeleville138.org/'
+
+UPDATE scraped_school_emails SET `SCRAPED_WEBSITE` = 'https://www.stew-stras.org/staff' WHERE `SCRAPED_WEBSITE` = 'https://www.stew-stras.org/'
+
+UPDATE scraped_school_emails SET `SCRAPED_WEBSITE` = 'https://sahs.k12.il.us/en-US/staff' WHERE `SCRAPED_WEBSITE` = 'https://www.sahs.k12.il.us/en-US'
+
+UPDATE scraped_school_emails SET `SCRAPED_WEBSITE` = 'https://www.woodland5.net/high_school' WHERE `SCRAPED_WEBSITE` = 'https://www.woodland5.net/'
+
+UPDATE scraped_school_emails SET `SCRAPED_WEBSITE` = 'https://nhs.sd171.org/' WHERE `SCRAPED_WEBSITE` = 'https://www.sd171.org/en-US'
+
+UPDATE scraped_school_emails SET `SCRAPED_WEBSITE` = 'https://sunsetridge29.org/59268_2' WHERE `SCRAPED_WEBSITE` = 'https://www.sunsetridge29.org/schools/middlefork_school___k-3_/teacher_pages/o__looney__maureen/websites'
+
+UPDATE scraped_school_emails SET `SCRAPED_WEBSITE` = 'https://www.sunsetridge29.org/13890_4' WHERE `SCRAPED_WEBSITE` = 'https://www.sunsetridge29.org/'
+
+-- Illinois: 30919 - 31319 (400)
+
+UPDATE scraped_school_emails SET `SCRAPED_WEBSITE` = 'https://www.vit2.org/page/jr-sr-high-contact-information' WHERE `SCRAPED_WEBSITE` = 'https://www.vit2.org/'
+
+UPDATE scraped_school_emails SET `SCRAPED_WEBSITE` = 'https://tgs5.com/faculty-%26-staff' WHERE `SCRAPED_WEBSITE` = 'https://tgs5.com/'
+
+UPDATE scraped_school_emails SET `SCRAPED_WEBSITE` = 'https://www.thomasboro.k12.il.us/staff' WHERE `SCRAPED_WEBSITE` = 'https://www.thomasboro.k12.il.us/'
+
+UPDATE scraped_school_emails SET `SCRAPED_WEBSITE` = 'https://www.cumberland.k12.il.us/o/chs' WHERE `SCRAPED_WEBSITE` = 'https://www.cumberland.k12.il.us/'
+
+UPDATE scraped_school_emails SET `SCRAPED_WEBSITE` = 'https://sites.google.com/tricityschools.org/hs-jh-teachers/home' WHERE `SCRAPED_WEBSITE` = 'https://www.tricityschools.org/'
+
+UPDATE scraped_school_emails SET `SCRAPED_WEBSITE` = 'https://tms.troy30c.org/' WHERE `SCRAPED_WEBSITE` = 'https://www.troy30c.org/'
+
+UPDATE scraped_school_emails SET `SCRAPED_WEBSITE` = 'https://www.cusd301.org/o/tchs' WHERE `SCRAPED_WEBSITE` = 'https://www.cusd301.org/'
+
+UPDATE scraped_school_emails SET `SCRAPED_WEBSITE` = 'https://www.urs86.org/administration/principal-page' WHERE `SCRAPED_WEBSITE` = 'https://www.urs86.org/'
+
+UPDATE scraped_school_emails SET `SCRAPED_WEBSITE` = 'https://valmeyerk12.org/en-US/staff' WHERE `SCRAPED_WEBSITE` = 'https://www.valmeyerk12.org/en-US'
+
+UPDATE scraped_school_emails SET `SCRAPED_WEBSITE` = 'https://www.veniceschools.org/staff' WHERE `SCRAPED_WEBSITE` = 'https://www.veniceschools.org/'
+
+UPDATE scraped_school_emails SET `SCRAPED_WEBSITE` = 'https://www.viennagradeschool.com/staff' WHERE `SCRAPED_WEBSITE` = 'https://www.viennagradeschool.com/'
+
+UPDATE scraped_school_emails SET `SCRAPED_WEBSITE` = 'https://www.vg302.org/staff?filter_ids=131335' WHERE `SCRAPED_WEBSITE` = 'https://www.vg302.org/'
+
+UPDATE scraped_school_emails SET `SCRAPED_WEBSITE` = 'https://www.virginia64.com/copy-of-district' WHERE `SCRAPED_WEBSITE` = 'https://www.virginia64.com/'
+
+UPDATE scraped_school_emails SET `SCRAPED_WEBSITE` = 'https://www.wesd185.org/staff?filter_ids=126867' WHERE `SCRAPED_WEBSITE` = 'https://www.wesd185.org/'
+
+UPDATE scraped_school_emails SET `SCRAPED_WEBSITE` = 'https://www.wcusd1.org/vnews/display.v/SEC/Grade%20School%7CGrade%20School%20Faculty%20and%20Staff' WHERE `SCRAPED_WEBSITE` = 'https://www.wcusd1.org/'
+
+UPDATE scraped_school_emails SET `SCRAPED_WEBSITE` = 'https://wles.wl.k12.il.us/' WHERE `SCRAPED_WEBSITE` = 'https://www.wl.k12.il.us/'
+
+UPDATE scraped_school_emails SET `SCRAPED_WEBSITE` = 'https://www.warsawschool.com/elementary-school/' WHERE `SCRAPED_WEBSITE` = 'https://www.warsawschool.com/'
+
+UPDATE scraped_school_emails SET `SCRAPED_WEBSITE` = 'https://www.d50schools.com/staff?filter_ids=45914' WHERE `SCRAPED_WEBSITE` = 'https://www.d50schools.com/'
+
+UPDATE scraped_school_emails SET `SCRAPED_WEBSITE` = 'https://www.waynecity100.org/staff?filter_ids=349194' WHERE `SCRAPED_WEBSITE` = 'https://www.waynecity100.org/'
+
+UPDATE scraped_school_emails SET `SCRAPED_WEBSITE` = 'https://www.wlb92.org/staff' WHERE `SCRAPED_WEBSITE` = 'https://wlb92.org/'
+
+UPDATE scraped_school_emails SET `SCRAPED_WEBSITE` = 'https://www.geese230.com/staff?filter_ids=255763' WHERE `SCRAPED_WEBSITE` = 'https://www.geese230.com/'
+
+UPDATE scraped_school_emails SET `SCRAPED_WEBSITE` = 'https://www.wssd115.org/vnews/display.v/StaffDirectory?sd=5ba16995e053f' WHERE `SCRAPED_WEBSITE` = 'https://www.wssd115.org/'
+
+UPDATE scraped_school_emails SET `SCRAPED_WEBSITE` = 'https://www.billtown.org/' WHERE `SCRAPED_WEBSITE` = 'https://www.billtown.org/index.php/academics/faculty-directory'
+
+UPDATE scraped_school_emails SET `SCRAPED_WEBSITE` = 'https://stevens.wilmington.will.k12.il.us/Our-Staff' WHERE `SCRAPED_WEBSITE` = 'https://www.209u.net/o/sis'
+
+UPDATE scraped_school_emails SET `SCRAPED_WEBSITE` = 'https://www.209u.net/o/bes' WHERE `SCRAPED_WEBSITE` = 'https://bruning.wilmington.will.k12.il.us/Contact-Us'
+
+UPDATE scraped_school_emails SET `SCRAPED_WEBSITE` = 'https://www.209u.net/o/wms' WHERE `SCRAPED_WEBSITE` = 'https://wms.wilmington.will.k12.il.us/About-Us'
+
+UPDATE scraped_school_emails SET `SCRAPED_WEBSITE` = 'https://www.209u.net/o/whs' WHERE `SCRAPED_WEBSITE` = 'https://whs.wilmington.will.k12.il.us/Contact-Us'
+
+UPDATE scraped_school_emails SET `SCRAPED_WEBSITE` = 'https://windsorcusd.org/elementary-teachers/' WHERE `SCRAPED_WEBSITE` = 'https://windsorcusd.org/'
+
+UPDATE scraped_school_emails SET `SCRAPED_WEBSITE` = 'https://windsorcusd.org/jrsrhighschool-teachers/' WHERE `SCRAPED_WEBSITE` = 'https://www.tiktok.com/@windsor_jr?lang=en'
+
+UPDATE scraped_school_emails SET `SCRAPED_WEBSITE` = 'https://www.winfield34.org/our-schools/elementarygrades/index' WHERE `SCRAPED_WEBSITE` = 'https://www.winfield34.org/'
+
+UPDATE scraped_school_emails SET `SCRAPED_WEBSITE` = 'https://www.whsd1.org/apps/staff/' WHERE `SCRAPED_WEBSITE` = 'https://www.whsd1.org/'
+
+UPDATE scraped_school_emails SET `SCRAPED_WEBSITE` = 'https://www.wbsd113.org/staff' WHERE `SCRAPED_WEBSITE` = 'https://www.wbsd113.org/'
+
+UPDATE scraped_school_emails SET `SCRAPED_WEBSITE` = 'https://mee.woodstockschools.org/' WHERE `SCRAPED_WEBSITE` = 'https://www.woodstockschools.org/endres'
+
+UPDATE scraped_school_emails SET `SCRAPED_WEBSITE` = 'https://cms.woodstockschools.org/' WHERE `SCRAPED_WEBSITE` = 'https://www.woodstockschools.org/creekside'
+
+UPDATE scraped_school_emails SET `SCRAPED_WEBSITE` = 'https://dse.woodstockschools.org/' WHERE `SCRAPED_WEBSITE` = 'https://www.woodstockschools.org/dean'
+
+UPDATE scraped_school_emails SET `SCRAPED_WEBSITE` = 'https://ges.woodstockschools.org/' WHERE `SCRAPED_WEBSITE` = 'https://www.woodstockschools.org/greenwood'
+
+UPDATE scraped_school_emails SET `SCRAPED_WEBSITE` = 'https://nms.woodstockschools.org/' WHERE `SCRAPED_WEBSITE` = 'https://www.woodstockschools.org/northwood'
+
+UPDATE scraped_school_emails SET `SCRAPED_WEBSITE` = 'https://whs.woodstockschools.org/' WHERE `SCRAPED_WEBSITE` = 'https://www.woodstockschools.org/whs'
+
+UPDATE scraped_school_emails SET `SCRAPED_WEBSITE` = 'https://wes.woodstockschools.org/' WHERE `SCRAPED_WEBSITE` = 'https://www.woodstockschools.org/westwood'
+
+UPDATE scraped_school_emails SET `SCRAPED_WEBSITE` = 'https://oes.woodstockschools.org/' WHERE `SCRAPED_WEBSITE` = 'https://www.woodstockschools.org/olson'
+
+UPDATE scraped_school_emails SET `SCRAPED_WEBSITE` = 'https://pes.woodstockschools.org/' WHERE `SCRAPED_WEBSITE` = 'https://www.woodstockschools.org/prairiewood'
+
+UPDATE scraped_school_emails SET `SCRAPED_WEBSITE` = 'https://ca.woodstockschools.org/' WHERE `SCRAPED_WEBSITE` = 'https://www.woodstockschools.org/clay'
+
+UPDATE scraped_school_emails SET `SCRAPED_WEBSITE` = 'https://whs.woodstockschools.org/' WHERE `SCRAPED_WEBSITE` = 'https://www.woodstockschools.org/wnhs'
+
+UPDATE scraped_school_emails SET `SCRAPED_WEBSITE` = 'https://www.zr188.org/staff' WHERE `SCRAPED_WEBSITE` = 'https://www.zr188.org/'
+
+UPDATE scraped_school_emails SET `SCRAPED_WEBSITE` = 'https://www.zb126.org/zbths' WHERE `SCRAPED_WEBSITE` = 'https://www.zb126.org/'

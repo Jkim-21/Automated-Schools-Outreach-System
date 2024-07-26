@@ -11,8 +11,8 @@ class email_scraper(scrapy.Spider):
     def __init__(self, max_depth=2, *args, **kwargs):
         super().__init__(*args, **kwargs)
         
-        self.dataset_protocol = 'setEmailsTest'
-        self.dataset = 'scraped_school_emails_backup'
+        self.dataset_protocol = 'setEmails'
+        self.dataset = 'scraped_school_emails'
         self.id_floor = 40820
         self.id_ceiling = 41220
         

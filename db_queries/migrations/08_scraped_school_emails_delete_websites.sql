@@ -69,7 +69,7 @@ DELETE FROM scraped_school_emails WHERE SCH_NAME LIKE "%deaf%";
 
 DELETE FROM scraped_school_emails WHERE SCH_NAME LIKE "%visually impaired%";
 
-DELETE FROM scraped_school_emails WHERE SCRAPED_WEBSITE LIKE "%blind%";
+DELETE FROM scraped_school_emails WHERE SCH_NAME LIKE "%blind%";
 
 DELETE FROM scraped_school_emails WHERE SCH_NAME LIKE "%rehab%";
 
@@ -168,8 +168,8 @@ DELETE FROM scraped_school_emails WHERE `SCRAPED_WEBSITE` LIKE "%www.niche.com%"
 
 DELETE FROM scraped_school_emails WHERE `SCRAPED_WEBSITE` LIKE "https://www.illinoisreportcard.com/School.aspx?schoolid=060161000022001";
 DELETE FROM scraped_school_emails WHERE `SCRAPED_WEBSITE` LIKE "https://www.illinoisreportcard.com/School.aspx?schoolid=060161000022003";
-DELETE FROM scraped_school_emails WHERE `SCRAPED_WEBSITE` LIKE "%Early Education%";
-DELETE FROM scraped_school_emails WHERE `SCRAPED_WEBSITE` LIKE "%Early Educ%";
+DELETE FROM scraped_school_emails WHERE `SCH_NAME` LIKE "%Early Education%";
+DELETE FROM scraped_school_emails WHERE `SCH_NAME` LIKE "%Early Educ%";
 DELETE FROM scraped_school_emails WHERE `SCRAPED_WEBSITE` LIKE "https://www.illinoisreportcard.com/School.aspx?schoolid=010010030262008";
 
 -- Illinois: 28108 - 28408 (300)
@@ -221,24 +221,32 @@ DELETE FROM scraped_school_emails WHERE `SCH_NAME` LIKE "%Prekindergarten%";
 DELETE FROM scraped_school_emails WHERE `SCH_NAME` LIKE "%kindergarten%";
 DELETE FROM scraped_school_emails WHERE `SCRAPED_WEBSITE` LIKE "https://www.illinoisreportcard.com/School.aspx?schoolid=500821880220001";
 
+-- Illinois 30013 - 30416 (403)
+
+DELETE FROM scraped_school_emails WHERE `SCRAPED_WEBSITE` LIKE "https://www.bhsroe.org/public-schools/ohio505/";
+DELETE FROM scraped_school_emails WHERE `SCH_NAME` LIKE "%Early Ch%";
+DELETE FROM scraped_school_emails WHERE `SCRAPED_WEBSITE` LIKE "https://www.questpeoria.org/Pages/Curriculum";
+
+-- Illinois 30417 - 30717 (400)
+
+DELETE FROM scraped_school_emails WHERE `SCRAPED_WEBSITE` LIKE "https://www.pontiac429.org/o/cs";
+DELETE FROM scraped_school_emails WHERE `SCRAPED_WEBSITE` LIKE "https://www.illinoisreportcard.com/School.aspx?schoolid=450791340042001";
+DELETE FROM scraped_school_emails WHERE `SCH_NAME` LIKE "Queen Bee School";
+DELETE FROM scraped_school_emails WHERE `SCH_NAME` LIKE "%Riverdale PreSchool Center%";
+DELETE FROM scraped_school_emails WHERE `SCRAPED_WEBSITE` LIKE "https://www.rimsd41.org/apps/pages/HMELC";
+DELETE FROM scraped_school_emails WHERE `SCH_NAME` LIKE "Rossville-Alvin Elem School";
+DELETE FROM scraped_school_emails WHERE `SCRAPED_WEBSITE` LIKE "https://www.illinoisreportcard.com/School.aspx?schoolid=340491160262007";
+
+-- Illinois 30718 -30918 (200)
+
+DELETE FROM scraped_school_emails WHERE `SCRAPED_WEBSITE` LIKE "https://www.illinoisreportcard.com/School.aspx?schoolid=041011340042001";
+DELETE FROM scraped_school_emails WHERE `SCRAPED_WEBSITE` LIKE "https://www.illinoisreportcard.com/School.aspx?schoolid=240320740032001";
+
 
 -- Illinois 30919 - 31319 (400)
 
-DELETE FROM scraped_school_emails WHERE `SCRAPED_WEBSITE` LIKE "";
-DELETE FROM scraped_school_emails WHERE `SCRAPED_WEBSITE` LIKE "";
-DELETE FROM scraped_school_emails WHERE `SCRAPED_WEBSITE` LIKE "";
-DELETE FROM scraped_school_emails WHERE `SCRAPED_WEBSITE` LIKE "";
-DELETE FROM scraped_school_emails WHERE `SCRAPED_WEBSITE` LIKE "";
-DELETE FROM scraped_school_emails WHERE `SCRAPED_WEBSITE` LIKE "";
-DELETE FROM scraped_school_emails WHERE `SCRAPED_WEBSITE` LIKE "";
-DELETE FROM scraped_school_emails WHERE `SCRAPED_WEBSITE` LIKE "";
-DELETE FROM scraped_school_emails WHERE `SCRAPED_WEBSITE` LIKE "";
-DELETE FROM scraped_school_emails WHERE `SCRAPED_WEBSITE` LIKE "";
-DELETE FROM scraped_school_emails WHERE `SCRAPED_WEBSITE` LIKE "";
-DELETE FROM scraped_school_emails WHERE `SCRAPED_WEBSITE` LIKE "";
-DELETE FROM scraped_school_emails WHERE `SCRAPED_WEBSITE` LIKE "";
-DELETE FROM scraped_school_emails WHERE `SCRAPED_WEBSITE` LIKE "";
-DELETE FROM scraped_school_emails WHERE `SCRAPED_WEBSITE` LIKE "";
-
-
+DELETE FROM scraped_school_emails WHERE `SCH_NAME` LIKE "%Erly Chldhd%";
+DELETE FROM scraped_school_emails WHERE `SCRAPED_WEBSITE` LIKE "https://educarewestdupage.org/";
+DELETE FROM scraped_school_emails WHERE `SCRAPED_WEBSITE` LIKE "https://www.illinoisreportcard.com/School.aspx?schoolid=190220330023004";
+DELETE FROM scraped_school_emails WHERE `SCRAPED_WEBSITE` LIKE "https://www.ipsd.org/preschool";
 
