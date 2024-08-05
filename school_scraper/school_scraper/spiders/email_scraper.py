@@ -13,8 +13,8 @@ class email_scraper(scrapy.Spider):
         
         self.dataset_protocol = 'setEmails'
         self.dataset = 'scraped_school_emails'
-        self.id_floor = 1
-        self.id_ceiling = 1
+        self.id_floor = 30417
+        self.id_ceiling = 30717
         
         self.start_urls = self.read_urls()
 

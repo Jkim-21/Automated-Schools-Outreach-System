@@ -18,8 +18,8 @@ def store_emails(school_website, emails, url, dataset, dataset_protocol):
         cursor.execute(f"SELECT * FROM {dataset} WHERE SCRAPED_WEBSITE = %s", (school_website,))
         # Returns the row of result and returns it as a tuple. If no more rows are available it returns `None`
         result = cursor.fetchone()
-        if result[10] is not None:
-            existing_emails_from_row = json.loads(result[10])
+        if result[len(result) - 1] is not None:
+            existing_emails_from_row = json.loads(len(result) - 1)
             for email, url in email_list.items():
                 if email not in existing_emails_from_row:
                     existing_emails_from_row[email] = url
