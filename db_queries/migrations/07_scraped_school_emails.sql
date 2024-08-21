@@ -1,6 +1,9 @@
 START TRANSACTION;
 
 CREATE TABLE scraped_school_emails AS SELECT * FROM search_engine_results_combined;
+
+CREATE INDEX INDEX_NUMBER ON scraped_school_emails(INDEX_NUMBER);
+
 ALTER TABLE scraped_school_emails 
 ADD SCRAPED_EMAILS JSON;
 
@@ -9,6 +12,9 @@ ADD SCH_TYPE_TEXT TEXT;
 
 ALTER TABLE scraped_school_emails
 ADD LZIP INT AFTER LCITY;
+
+ALTER TABLE scraped_school_emails
+MODIFY LZIP TEXT;
 
 ALTER TABLE scraped_school_emails
 ADD LEVEL TEXT AFTER INDEX_NUMBER;
@@ -20,8 +26,14 @@ ALTER TABLE scraped_school_emails
 ADD LON DECIMAL(10, 7) AFTER LAT;
 
 ALTER TABLE scraped_school_emails
+ADD PHONE TEXT AFTER LON;
+
+ALTER TABLE scraped_school_emails
 MODIFY COLUMN SCH_TYPE_TEXT TEXT
 AFTER LEVEL;
+
+ALTER TABLE scraped_school_emails
+ADD PRIMARY KEY (INDEX_NUMBER);
 
 UPDATE scraped_school_emails
 SET `WEBSITE` = CASE
@@ -34,3 +46,6 @@ DROP TABLE IF EXISTS scraped_school_emails_backup;
 CREATE TABLE scraped_school_emails_backup LIKE scraped_school_emails;
 INSERT INTO scraped_school_emails_backup SELECT * from scraped_school_emails;
 COMMIT;
+
+
+SELECT * FROM scraped_school_emails

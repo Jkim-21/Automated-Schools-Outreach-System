@@ -31,6 +31,7 @@ CREATE TABLE full_school_information (
 ALTER TABLE full_school_information
 ADD SCRAPED_WEBSITE TEXT;
 
+CREATE INDEX INDEX_NUMBER ON full_school_information(INDEX_NUMBER);
 
 DROP TABLE IF EXISTS full_school_information_backup;
 CREATE TABLE full_school_information_backup LIKE full_school_information;

@@ -13,8 +13,8 @@ class email_scraper(scrapy.Spider):
         
         self.dataset_protocol = 'setEmails'
         self.dataset = 'scraped_school_emails'
-        self.id_floor = 30417
-        self.id_ceiling = 30717
+        self.id_floor = 26923
+        self.id_ceiling = 30215
         
         self.start_urls = self.read_urls()
 
@@ -23,7 +23,7 @@ class email_scraper(scrapy.Spider):
         
         self.key_websites = ['directory','activities','music','handbook','administration','faculty','staff','contact','about','departments','art','band','orchestra','fine-arts','instrument','performing-arts','performance']
         self.keywords = ['admin@','music@','band@','choir@','@orchestra','art@','arts@','deansoffice@','dean@','principal@', 'schooloffice@']
-        self.blacklist_keywords = ['news','archive','transport','sports','publication', 'announcement', 'javascript','tel','forum','calendar','alumni','student','gallery','blog','shop','store','donate','donations','careers','recruitment','event','merch', 'mailto:', 'javascript:', 'tel:']
+        self.blacklist_keywords = ['news', 'live-feed', 'archive','transport','sports','publication', 'announcement', 'javascript','tel','forum','calendar','alumni','student','gallery','blog','shop','store','donate','donations','careers','recruitment','event','merch', 'mailto:', 'javascript:', 'tel:']
         self.blacklist_start_keywords = ['news','archive','transport','sports','publication','javascript','tel','forum','calendar','alumni','student','gallery','blog','shop','store','domate','donations','careers','recruitment','event','merch', 'mailto:', '#']
         self.excluded_extensions = ['.pdf', '.doc', '.docx', '.jpg', '.jpeg', '.png', '.gif', '.bmp', '.tiff', '.pptx', '.ppt', '.webm']
         
